@@ -69,6 +69,7 @@
   "hero_tag": "Speicheranalyse für den Mac",
   "hero_title": "Sieh, was deinen Mac füllt.",
   "nav_contact": "Kontakt",
+  "nav_menu": "Menü",
   "nav_download": "Download",
   "nav_features": "Funktionen",
   "nav_pricing": "Preis",
@@ -173,6 +174,7 @@
   "hero_tag": "Disk space analyzer for Mac",
   "hero_title": "See what’s filling your Mac.",
   "nav_contact": "Contact",
+  "nav_menu": "Menu",
   "nav_download": "Download",
   "nav_features": "Features",
   "nav_pricing": "Pricing",
@@ -277,6 +279,7 @@
   "hero_tag": "Analisi dello spazio su disco per Mac",
   "hero_title": "Scopri cosa riempie il tuo Mac.",
   "nav_contact": "Contatti",
+  "nav_menu": "Menu",
   "nav_download": "Download",
   "nav_features": "Funzioni",
   "nav_pricing": "Prezzo",
@@ -381,6 +384,7 @@
   "hero_tag": "Анализ дискового пространства для Mac",
   "hero_title": "Узнайте, что занимает место на вашем Mac.",
   "nav_contact": "Контакты",
+  "nav_menu": "Меню",
   "nav_download": "Скачать",
   "nav_features": "Возможности",
   "nav_pricing": "Цена",
@@ -572,6 +576,19 @@
       setStat('dl', cnt('downloads', 'up'));
     });
   }
+
+  // --- Mobile-Menü (Burger) ---
+  document.documentElement.classList.add('js');
+  var hdr = document.querySelector('header.top'), burger = document.querySelector('.burger');
+  function setMenu(o) {
+    hdr.classList.toggle('open', o);
+    burger.setAttribute('aria-expanded', o ? 'true' : 'false');
+  }
+  burger.addEventListener('click', function () { setMenu(!hdr.classList.contains('open')); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  document.querySelectorAll('nav.main a').forEach(function (a) {
+    a.addEventListener('click', function () { setMenu(false); });
+  });
 
   showTab(1);
   setLanguage(lang, false);
