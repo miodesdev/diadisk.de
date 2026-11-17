@@ -157,9 +157,9 @@ main.wrap { padding-top:60px; max-width:640px; }
   html:not(.js) nav.main { order:3; flex:0 0 100%; overflow-x:auto; gap:0 22px; margin:0 -18px; padding:0 18px; scrollbar-width:none; }
   html:not(.js) nav.main a { font-size:.85rem; padding:11px 0; }
   .js nav.main { display:block; text-align:right; }
-  .js nav.main a { display:flex; align-items:center; justify-content:flex-end; min-height:40px; padding:0; font-size:20px; opacity:.8; border-bottom:1px solid var(--line); }
+  .js nav.main a { display:flex; align-items:center; justify-content:flex-end; min-height:40px; padding:0; font-size:20px; font-weight:600; opacity:.8; border-bottom:1px solid var(--line); }
   .js .menu .lang { width:fit-content; margin:20px 0 0 auto; }
-  .js .lang button { min-height:32px; font-size:16px; }
+  .js .lang button { min-height:32px; font-size:16px; font-weight:400; }
   html { scroll-padding-top:64px; }
 }
 @media (max-width:700px) {
