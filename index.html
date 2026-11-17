@@ -7,25 +7,30 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>DiaDisk – Speicheranalyse für den Mac</title>
 <meta name="description" content="Visualisiere die Speicherbelegung auf deinen Laufwerken als interaktives Diagramm. Sechs Ansichten, 100 % lokal, ab 1,99 € (Einführungspreis).">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
+<meta name="theme-color" content="#1637E8">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://diadisk.de/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="DiaDisk – Speicheranalyse für den Mac">
 <meta property="og:description" content="Sieh, was deinen Mac füllt. Sechs Ansichten, 100 % lokal, ab 1,99 €.">
 <meta property="og:url" content="https://diadisk.de/">
-<meta property="og:image" content="https://diadisk.de/img/sunburst.webp">
+<meta property="og:image" content="https://diadisk.de/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://diadisk.de/og-image.jpg">
 <link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DiaDisk","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 14 or later (Apple Silicon)","softwareVersion":"1.0.0","offers":{"@type":"Offer","price":"1.99","priceCurrency":"EUR"},"url":"https://diadisk.de/","image":"https://diadisk.de/img/sunburst.webp"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DiaDisk","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 14 or later (Apple Silicon)","softwareVersion":"1.0.0","offers":{"@type":"Offer","price":"1.99","priceCurrency":"EUR"},"url":"https://diadisk.de/","image":"https://diadisk.de/og-image.jpg"}</script>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="logo-96.png" alt="DiaDisk" width="42" height="42"><span>DiaDisk</span></a>
+    <a class="brand" href="#top"><picture><source media="(prefers-color-scheme: dark)" srcset="logo-dark.svg"><img src="logo-light.svg" alt="DiaDisk" width="42" height="42"></picture><span>DiaDisk</span></a>
     <nav class="main">
       <a href="#ansichten" data-i18n="nav_views">Ansichten</a>
       <a href="#funktionen" data-i18n="nav_features">Funktionen</a>
@@ -56,7 +61,7 @@
         <li data-i18n="hero_b4"><b>Made in Germany:</b> Sorgfältige Entwicklung, Datenschutz nach höchsten Standards und kompromisslose Qualität.</li>
       </ul>
       <div class="cta">
-        <a class="btn btn-primary" href="downloads/DiaDisk-1.0.0.dmg" download data-i18n="btn_dl">DiaDisk 1.0.0 herunterladen</a>
+        <a class="btn btn-primary" href="downloads/DiaDisk.zip" download data-i18n="btn_dl">DiaDisk 1.0.0 herunterladen</a>
         <a class="btn btn-ghost buy-link hidden" target="_blank" rel="noopener" data-i18n="btn_buy">Lizenz kaufen (Zahl, was du willst)</a>
       </div>
       <p class="small" data-i18n="hero_meta">macOS 14+ · Apple Silicon (M1 oder neuer) · 7 Tage alles testen. Danach bleiben Strahldiagramm und Standardfarben kostenlos, alles Weitere ab 1,99 € (Einführungspreis).</p>
@@ -124,7 +129,7 @@
         <p data-i18n="nt_lead">macOS blockiert den ersten Start, weil Apples automatische Malware-Prüfung (Notarisierung) noch aussteht.</p>
         <p class="nt-steps-t" data-i18n="nt_steps_t">So öffnest du die App trotzdem:</p>
         <ol>
-          <li data-i18n="nt_s1">Prüfsumme der DMG prüfen (siehe Download).</li>
+          <li data-i18n="nt_s1">Prüfsumme der ZIP-Datei prüfen (siehe Download).</li>
           <li data-i18n="nt_s2">DiaDisk in „Programme“ ziehen, einmal starten und die Warnung mit „Fertig“ schließen.</li>
           <li data-i18n="nt_s3">Systemeinstellungen → Datenschutz &amp; Sicherheit → bei DiaDisk „Dennoch öffnen“, mit Passwort oder Touch ID bestätigen.</li>
         </ol>
@@ -137,18 +142,18 @@
     <div class="wrap">
       <h2 data-i18n="dl_title">Download</h2>
       <div class="card dl">
-        <div><img src="logo.png" alt="DiaDisk" width="150" height="150"></div>
+        <div><picture><source media="(prefers-color-scheme: dark)" srcset="logo-dark.svg"><img src="logo-light.svg" alt="DiaDisk" width="150" height="150"></picture></div>
         <div>
           <h3>DiaDisk 1.0.0</h3>
-          <p class="dl-meta" data-i18n="dl_meta">macOS 14+ · Apple Silicon (M1 oder neuer) · DMG, 2,6 MB</p>
-          <a class="btn btn-primary" href="downloads/DiaDisk-1.0.0.dmg" download data-i18n="btn_dmg">DMG herunterladen</a>
+          <p class="dl-meta" data-i18n="dl_meta">macOS 14+ · Apple Silicon (M1 oder neuer) · ZIP, 1,3 MB</p>
+          <a class="btn btn-primary" href="downloads/DiaDisk.zip" download data-i18n="btn_dmg">ZIP herunterladen</a>
           <p class="small" data-i18n="dl_note">Bitte den Hinweis zur fehlenden Notarisierung beachten.</p>
           <p class="small"><b>SHA-256</b></p>
           <div class="hash">
-            <code id="sha-value">c3757391e727dc0887ba865ee81774e8b537790c1397cf26aa9ca804b8683f85</code>
+            <code id="sha-value">c344b0406513ef0e00ab67a39a12b79518e194bcadb966845ec18e23baa49739</code>
             <button type="button" id="sha-copy" data-i18n="sha_copy">Kopieren</button>
           </div>
-          <p class="small"><span data-i18n="sha_hint">Prüfen im Terminal:</span> <code class="mono">shasum -a 256 DiaDisk-1.0.0.dmg</code> · <a href="downloads/DiaDisk-1.0.0.dmg.sha256" download>.sha256</a></p>
+          <p class="small"><span data-i18n="sha_hint">Prüfen im Terminal:</span> <code class="mono">shasum -a 256 DiaDisk.zip</code> · <a href="downloads/DiaDisk.zip.sha256" download>.sha256</a></p>
         </div>
       </div>
       <div class="stats" aria-live="polite">

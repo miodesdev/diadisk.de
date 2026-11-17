@@ -1,10 +1,10 @@
 # DiaDisk auf GitHub Pages veröffentlichen
 
 ## Vor dem Hochladen ergänzen
-1. Logo und Favicons sind enthalten (`logo*.png`, `favicon*`, `apple-touch-icon.png`).
-2. `downloads/DiaDisk-1.0.0.dmg` und `downloads/DiaDisk-1.0.0.dmg.sha256` hineinkopieren, danach `downloads/README.txt` löschen.
-3. In `app.js` oben `PAYHIP_URL` eintragen. Solange der Wert leer ist, bleiben die Kaufen-Buttons ausgeblendet.
-4. Bei einer neuen Version die Dateinamen und die Version in `index.html` (zweimal `DiaDisk-1.0.0`) und den SHA-256-Wert anpassen.
+1. Logo und Favicons sind enthalten (`logo-light/dark.svg`, `favicon.svg`, `favicon*`, `apple-touch-icon.png`, `og-image.jpg`).
+2. `downloads/DiaDisk.zip` und `DiaDisk.zip.sha256` liegen bei.
+3. `PAYHIP_URL` in `app.js` ist gesetzt (leer = Kaufen-Buttons ausgeblendet).
+4. Bei einer neuen Version ZIP ersetzen, `.sha256` neu erzeugen und den SHA-256-Wert in `index.html` anpassen.
 
 ## Aktivieren
 1. Neues **öffentliches** Repository anlegen und den Inhalt dieses Ordners in den Wurzelordner pushen.

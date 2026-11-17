@@ -13,9 +13,12 @@ Statische Ein-Seiten-Website für die macOS-App DiaDisk 1.0.0 (Speicheranalyse, 
 | `legal.js` | Impressum, Datenschutz, KI-Hinweis, Widerruf in 4 Sprachen (`window.LEGAL`) |
 | `style.css` | Gesamtes Styling, Hell/Dunkel per `prefers-color-scheme` |
 | `img/*.webp` | 7 Screenshots (6 Fenster-Bilder je 1392 × 787 px, `tree-languages` 1400 × 1012 px) |
-| `logo.png`, `logo-96.png` | Logo (Kopfzeile, Download-Karte) |
-| `favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` | Browser-Tab und Homescreen, Logo auf dunkler Kachel |
-| `downloads/` | Hier liegen `DiaDisk-1.0.0.dmg` und `DiaDisk-1.0.0.dmg.sha256` (nicht im Paket) |
+| `logo-light.svg`, `logo-dark.svg` | Logo (Kopfzeile, Download-Karte); per `<picture>` und `prefers-color-scheme` gewechselt. PNG-Fassungen: `logo*.png`, `logo-96*.png` |
+| `favicon.svg` | Favicon (Würfel ohne Buchstaben), wechselt Hell/Dunkel per Media-Query im SVG |
+| `favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` | Fallbacks und Homescreen: weißer Würfel auf blauer App-Kachel |
+| `favicon-light.png`, `favicon-dark.png`, `favicon-light.svg` | Originaldateien der Logo-Vorlage (nicht eingebunden) |
+| `og-image.jpg` | Vorschaubild für soziale Netzwerke (1200 × 630) |
+| `downloads/` | `DiaDisk.zip` (signierte DiaDisk.app, 1.0.0) und `DiaDisk.zip.sha256` |
 | `CNAME`, `.nojekyll`, `robots.txt`, `sitemap.xml`, `404.html` | Hosting und SEO |
 | `DEPLOY.md` | Schritt-für-Schritt-Veröffentlichung |
 
@@ -37,15 +40,15 @@ Kopfzeile (Logo, Navigation, Sprachwahl) → Hero (Download-Button, Kurzinfo) �
 ## 6. Zähler (Besucher gesamt, Besucher heute, Download-Klicks)
 - Dienst: CounterAPI, `https://api.counterapi.dev/v1/diadisk-de/<name>/up` (Namen: `visits-total`, `visits-JJJJMMTT` in UTC, `downloads`).
 - Einstellungen in `app.js`: `CNT` (Adresse, Namespace), `COUNT_ONCE_PER_DAY` (Standard `true`, merkt sich das Datum im Local Storage unter `dd_visit`).
-- Download-Klicks: jeder Klick auf einen Link, der auf `.dmg` endet.
+- Download-Klicks: jeder Klick auf einen Link, der auf `.zip` endet.
 - Die CSP in `index.html` erlaubt nur `connect-src https://api.counterapi.dev`. Beim Dienstwechsel dort, in `CNT` und in Abschnitt 3 und 4 der Datenschutzerklärung (`legal.js`, alle 4 Sprachen) ändern.
 - Bei Ausfall zeigen die Kacheln „–“.
 - Die Zähler sind öffentlich und manipulierbar.
 - Die Zähler-Funktion wurde nur mit simuliertem Dienst getestet, nicht gegen den echten.
 
 ## 7. Offene Punkte vor dem Livegang
-1. `PAYHIP_URL` oben in `app.js` eintragen (leer = Kaufen-Buttons bleiben ausgeblendet).
-2. `downloads/DiaDisk-1.0.0.dmg` und `.sha256` ablegen, `downloads/README.txt` löschen. Bei neuer Version: Dateiname und Version in `index.html` (zweimal) sowie den SHA-256-Wert anpassen und `app.js` (`btn_dl`, `dl_*`-Texte) prüfen.
+1. Erledigt: `PAYHIP_URL` in `app.js` zeigt auf `https://payhip.com/b/aEo54` (öffentlicher Produktlink, kein Geheimnis).
+2. Erledigt: `downloads/DiaDisk.zip` und `.sha256` liegen bei. Bei neuer Version: ZIP ersetzen, `.sha256` neu erzeugen (`shasum -a 256 DiaDisk.zip`), SHA-256-Wert und Größe (`dl_meta`) in `index.html`/`app.js`, Versionsnummer (`btn_dl`, `index.html`, JSON-LD) anpassen.
 3. CounterAPI prüfen (Anbieter, Sitz, Datenschutzhinweise, Erreichbarkeit mit echter Domain) und die Datenschutzerklärung rechtlich prüfen lassen. Offene Frage: Das Speichern von `dd_visit` ist nicht „technisch erforderlich“; ggf. Einwilligung oder Zählung ohne Speicherung (jeder Aufruf zählt).
 4. Alle Rechtstexte (Impressum, Datenschutz, Widerruf, KI-Hinweis) vor Veröffentlichung juristisch prüfen lassen.
 5. Notarisierung: Hinweis in der Seite entfernen, sobald die App notarisiert ist (Abschnitt `#notarisierung`, Schlüssel `nt_*`; Verweise in `dl_note`).
@@ -54,5 +57,5 @@ Kopfzeile (Logo, Navigation, Sprachwahl) → Hero (Download-Button, Kurzinfo) �
 ## 8. Technische Hinweise
 - Sicherheits-Header auf GitHub Pages nur per `<meta>` möglich (CSP vorhanden; `frame-ancestors`, HSTS und X-Frame-Options nicht).
 - Screenshots: neue Bilder auf dieselbe Größe (1392 × 787 px) zuschneiden, Fensterrand entfernen, Ecken abrunden (Radius ca. 22 px), als WebP speichern.
-- Favicons: Logo auf dunkler, abgerundeter Kachel, damit es in hellen und dunklen Tabs sichtbar ist.
+- Favicons: `favicon.svg` passt sich dem Browser-Schema an; ICO/PNG/Apple-Touch zeigen den Würfel weiß auf blauer Kachel und sind auf hellen und dunklen Tabs sichtbar.
 - Getestet: Chromium (Desktop und 390 px breit), keine Konsolenfehler.
