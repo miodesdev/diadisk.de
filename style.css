@@ -143,6 +143,12 @@ main.wrap { padding-top:60px; max-width:640px; }
 @media (max-width:700px) {
   body { font-size:16px; }
   .wrap { padding:0 18px; }
+  .top .wrap { flex-wrap:wrap; padding-top:6px; padding-bottom:6px; }
+  nav.main { order:3; flex:0 0 100%; overflow-x:auto; gap:0 22px; margin:0 -18px; padding:0 18px; scrollbar-width:none; }
+  nav.main::-webkit-scrollbar { display:none; }
+  nav.main a { font-size:.85rem; padding:11px 0; }
+  .lang button { padding:7px 12px; }
+  html { scroll-padding-top:100px; }
   .hero { padding:44px 0 24px; }
   .hero-points { grid-template-columns:1fr; }
   section.block { padding:52px 0; } .showcase { padding:36px 0 48px; }
@@ -161,25 +167,3 @@ footer button { min-height:40px; }
 @media (pointer:coarse) { nav.main a { padding:12px 0; } }
 @media (pointer:coarse) { .lang button { min-height:36px; padding:6px 12px; } }
 .ico svg { display:block; }
-
-/* Mobile Navigation: Menü-Symbol und Ausklappmenü */
-.menu { display:contents; }
-.burger { display:none; }
-@media (max-width:700px) {
-  html { scroll-padding-top:64px; }
-  html.nav-lock { overflow:hidden; }
-  .top .wrap { flex-wrap:nowrap; min-height:52px; padding-top:4px; padding-bottom:4px; }
-  .burger { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; width:44px; height:44px; margin-right:-10px; background:none; border:0; border-radius:50%; cursor:pointer; color:var(--text); }
-  .burger span { display:block; width:18px; height:1.5px; background:currentColor; border-radius:2px; transition:transform .3s ease; }
-  header.open .burger span:first-child { transform:translateY(3.75px) rotate(45deg); }
-  header.open .burger span:last-child { transform:translateY(-3.75px) rotate(-45deg); }
-  .menu { display:flex; flex-direction:column; position:absolute; top:100%; left:0; right:0; height:calc(100vh - 52px); height:calc(100dvh - 52px);
-    padding:8px 18px 28px; overflow-y:auto; background:var(--bg); visibility:hidden; opacity:0; transform:translateY(-6px);
-    transition:opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
-  header.open .menu { visibility:visible; opacity:1; transform:none; transition:opacity .25s ease, transform .25s ease; }
-  .menu nav.main { flex-direction:column; gap:0; }
-  .menu nav.main a { display:flex; align-items:center; min-height:56px; padding:0; font-size:1.4rem; font-weight:600; letter-spacing:-.02em; opacity:1; color:var(--text); border-bottom:1px solid color-mix(in srgb, var(--line) 60%, transparent); }
-  .menu nav.main a:hover { color:var(--brand); }
-  .menu .lang { margin-top:24px; padding:3px; }
-  .menu .lang button { flex:1; min-height:44px; font-size:.95rem; }
-}

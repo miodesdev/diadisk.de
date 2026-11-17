@@ -578,23 +578,3 @@
   renderStats();
   initCounters();
 })();
-
-
-/* Mobile Navigation (Menü-Symbol) */
-(function () {
-  var h = document.querySelector('header.top'), b = document.querySelector('.burger');
-  if (!h || !b) return;
-  function set(o) {
-    h.classList.toggle('open', o);
-    b.setAttribute('aria-expanded', o ? 'true' : 'false');
-    document.documentElement.classList.toggle('nav-lock', o);
-  }
-  b.addEventListener('click', function () { set(!h.classList.contains('open')); });
-  document.querySelectorAll('.menu nav a, .lang button').forEach(function (el) {
-    el.addEventListener('click', function () { set(false); });
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && h.classList.contains('open')) { set(false); b.focus(); }
-  });
-  window.matchMedia('(min-width: 701px)').addEventListener('change', function (e) { if (e.matches) set(false); });
-})();
