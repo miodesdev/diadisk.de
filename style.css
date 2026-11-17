@@ -144,6 +144,8 @@ main.wrap { padding-top:60px; max-width:640px; }
 }
 @media (max-width:860px) {
   .top .wrap { flex-wrap:wrap; padding:4px 18px; gap:0; }
+  .brand { gap:10px; font-size:20px; letter-spacing:-.02em; }
+  .brand img { width:30px; height:30px; }
   .top.open { max-height:100vh; max-height:100dvh; overflow-y:auto; }
   .js .burger { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:6px; width:44px; height:44px; margin-right:-10px; padding:0; border:0; background:transparent; color:var(--text); cursor:pointer; }
   .burger i { display:block; width:20px; height:2px; background:currentColor; border-radius:2px; transition:transform .25s, opacity .25s; }
@@ -154,9 +156,9 @@ main.wrap { padding-top:60px; max-width:640px; }
   .js .top.open .menu { display:block; }
   html:not(.js) nav.main { order:3; flex:0 0 100%; overflow-x:auto; gap:0 22px; margin:0 -18px; padding:0 18px; scrollbar-width:none; }
   html:not(.js) nav.main a { font-size:.85rem; padding:11px 0; }
-  .js nav.main { display:block; }
-  .js nav.main a { display:flex; align-items:center; min-height:32px; padding:0; font-size:16px; opacity:.8; border-bottom:1px solid var(--line); }
-  .js .menu .lang { width:fit-content; margin:20px 0 0; }
+  .js nav.main { display:block; text-align:right; }
+  .js nav.main a { display:flex; align-items:center; justify-content:flex-end; min-height:40px; padding:0; font-size:20px; opacity:.8; border-bottom:1px solid var(--line); }
+  .js .menu .lang { width:fit-content; margin:20px 0 0 auto; }
   .js .lang button { min-height:32px; font-size:16px; }
   html { scroll-padding-top:64px; }
 }
