@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src https://api.counterapi.dev; form-action 'none'; base-uri 'self'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>DiaDisk – Speicheranalyse für den Mac</title>
-<meta name="description" content="Visualisiere die Speicherbelegung auf deinen Laufwerken in sechs interaktiven Ansichten. 100 % lokal, ab 1,99 € (Einführungspreis).">
+<meta name="description" content="Visualisiere die Speicherbelegung auf deinen Laufwerken in sechs interaktiven Ansichten. 100 % lokal, ab 1,99 € zzgl. MwSt. (Einführungspreis).">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -16,7 +16,7 @@
 <link rel="canonical" href="https://diadisk.de/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="DiaDisk – Speicheranalyse für den Mac">
-<meta property="og:description" content="Sieh, was deinen Mac füllt. Sechs Ansichten, 100 % lokal, ab 1,99 €.">
+<meta property="og:description" content="Sieh, was deinen Mac füllt. Sechs Ansichten, 100 % lokal, ab 1,99 € zzgl. MwSt.">
 <meta property="og:url" content="https://diadisk.de/">
 <meta property="og:image" content="https://diadisk.de/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://diadisk.de/og-image.jpg">
 <link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DiaDisk","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 14 or later (Apple Silicon)","offers":{"@type":"Offer","price":"1.99","priceCurrency":"EUR"},"url":"https://diadisk.de/","image":"https://diadisk.de/og-image.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DiaDisk","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 14 or later (Apple Silicon)","offers":{"@type":"Offer","price":"1.99","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"1.99","priceCurrency":"EUR","valueAddedTaxIncluded":false}},"url":"https://diadisk.de/","image":"https://diadisk.de/og-image.jpg"}</script>
 </head>
 <body>
 
@@ -67,7 +67,15 @@
         <a class="btn btn-primary" href="downloads/DiaDisk.zip" download data-i18n="btn_dl">DiaDisk herunterladen</a>
         <a class="btn btn-ghost buy-link hidden" target="_blank" rel="noopener" data-i18n="btn_buy">Lizenz kaufen (Zahl, was du willst)</a>
       </div>
-      <p class="small" data-i18n="hero_meta">macOS 14+ · Apple Silicon (M1 oder neuer) · 7 Tage alles testen. Danach bleiben eine Ansicht und Standardfarben kostenlos, alles Weitere ab 1,99 € (Einführungspreis).</p>
+      <p class="small" data-i18n="hero_meta">macOS 14+ · Apple Silicon (M1 oder neuer) · 7 Tage alles testen. Danach bleiben die Eiszapfen-Ansicht und die Standardfarben kostenlos, alles Weitere ab 1,99 € zzgl. MwSt. (Einführungspreis).</p>
+    </div>
+  </section>
+
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2 data-i18n="demo_title">DiaDisk in 30 Sekunden</h2>
+      <p class="sub" data-i18n="demo_sub">Scan starten, Ansichten wechseln, Farben wählen – ein kurzer Rundgang.</p>
+      <figure class="demo-shot"><video id="demo-video" src="video/DiaDisk-Demo-30s.mp4" poster="video/DiaDisk-Demo-poster.webp" width="1920" height="1160" autoplay muted loop playsinline controls preload="metadata" data-i18n-aria="demo_label" aria-label="Demo-Video: Ansichten und Farben von DiaDisk im Überblick (30 Sekunden, ohne Ton)"></video></figure>
     </div>
   </section>
 
@@ -84,13 +92,13 @@
         <button type="button" role="tab" aria-selected="false" aria-controls="shot-5" id="tab-5" data-tab="5" data-i18n="v5">Voronoi</button>
         <button type="button" role="tab" aria-selected="false" aria-controls="shot-6" id="tab-6" data-tab="6" data-i18n="v6">Baum</button>
       </div>
-      <figure class="shot" id="shot-0" role="tabpanel" aria-labelledby="tab-0"><img src="img/overview.webp" width="1392" height="787" data-i18n-alt="alt0" alt="DiaDisk Startseite mit Laufwerken und Einstellungen"><figcaption data-i18n="c0">Die Startseite: Laufwerke, dein Home-Verzeichnis und eigene Ordner, daneben die Einstellungen für Ansichten und Farben.</figcaption></figure>
-      <figure class="shot hidden" id="shot-1" role="tabpanel" aria-labelledby="tab-1"><img src="img/sunburst.webp" width="1392" height="787" loading="lazy" data-i18n-alt="alt1" alt="DiaDisk mit Strahl-Ansicht der Library, Seitenleiste mit Farbschemen"><figcaption data-i18n="c1">Strahl-Ansicht: Ordnerebenen als Ringe, hier im Standard-Farbschema. Dauerhaft kostenlos.</figcaption></figure>
-      <figure class="shot hidden" id="shot-2" role="tabpanel" aria-labelledby="tab-2"><img src="img/treemap.webp" width="1392" height="787" loading="lazy" data-i18n-alt="alt2" alt="DiaDisk mit Kachel-Ansicht im Farbschema Ozean"><figcaption data-i18n="c2">Kachel-Ansicht: Flächen entsprechen Größen, hier im Schema „Ozean“.</figcaption></figure>
-      <figure class="shot hidden" id="shot-3" role="tabpanel" aria-labelledby="tab-3"><img src="img/icicle.webp" width="1392" height="787" loading="lazy" data-i18n-alt="alt3" alt="DiaDisk mit Eiszapfen-Ansicht in Schwarz-Weiß"><figcaption data-i18n="c3">Eiszapfen-Ansicht: die Hierarchie in Spalten, hier in Schwarz-Weiß.</figcaption></figure>
-      <figure class="shot hidden" id="shot-4" role="tabpanel" aria-labelledby="tab-4"><img src="img/circles.webp" width="1392" height="787" loading="lazy" data-i18n-alt="alt4" alt="DiaDisk mit Kreis-Verschachtelung im Ampelgradient"><figcaption data-i18n="c4">Kreis-Verschachtelung: Ordner als ineinanderliegende Kreise, hier als Ampelgradient.</figcaption></figure>
-      <figure class="shot hidden" id="shot-5" role="tabpanel" aria-labelledby="tab-5"><img src="img/voronoi.webp" width="1392" height="787" loading="lazy" data-i18n-alt="alt5" alt="DiaDisk mit Voronoi-Treemap in Blautönen"><figcaption data-i18n="c5">Voronoi-Treemap: organisch geformte Zellen, hier in Blautönen.</figcaption></figure>
-      <figure class="shot hidden" id="shot-6" role="tabpanel" aria-labelledby="tab-6"><img src="img/tree-languages.webp" width="1400" height="1012" loading="lazy" data-i18n-alt="alt6" alt="DiaDisk mit Verzeichnisbaum und geöffneter Sprachauswahl"><figcaption data-i18n="c6">Verzeichnisbaum mit Größenbalken und Prozentwerten. Im Bild: die Auswahl unter 25 Sprachen.</figcaption></figure>
+      <figure class="shot" id="shot-0" role="tabpanel" aria-labelledby="tab-0"><img src="img/overview.webp" width="1392" height="780" data-i18n-alt="alt0" alt="DiaDisk Startseite mit Laufwerken und Einstellungen"><figcaption data-i18n="c0">Die Startseite: Laufwerke, dein Home-Verzeichnis und eigene Ordner, daneben die Einstellungen für Ansichten und Farben.</figcaption></figure>
+      <figure class="shot hidden" id="shot-1" role="tabpanel" aria-labelledby="tab-1"><img src="img/sunburst.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt1" alt="DiaDisk mit Strahl-Ansicht der Library in den Farben „Sonnenuntergang“, Seitenleiste mit Farben"><figcaption data-i18n="c1">Strahl-Ansicht: Ordnerebenen als Ringe, hier in den Farben „Sonnenuntergang“.</figcaption></figure>
+      <figure class="shot hidden" id="shot-2" role="tabpanel" aria-labelledby="tab-2"><img src="img/treemap.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt2" alt="DiaDisk mit Kachel-Ansicht in den Farben „Kontrastreich“"><figcaption data-i18n="c2">Kachel-Ansicht: Flächen entsprechen Größen, hier in den Farben „Kontrastreich“.</figcaption></figure>
+      <figure class="shot hidden" id="shot-3" role="tabpanel" aria-labelledby="tab-3"><img src="img/icicle.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt3" alt="DiaDisk mit Eiszapfen-Ansicht in den Farben „Ozean“"><figcaption data-i18n="c3">Eiszapfen-Ansicht: die Hierarchie in Spalten, hier in den Farben „Ozean“. Dauerhaft kostenlos.</figcaption></figure>
+      <figure class="shot hidden" id="shot-4" role="tabpanel" aria-labelledby="tab-4"><img src="img/circles.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt4" alt="DiaDisk mit Kreis-Verschachtelung in den Farben „Ozean“"><figcaption data-i18n="c4">Kreis-Verschachtelung: Ordner als ineinanderliegende Kreise, hier in den Farben „Ozean“.</figcaption></figure>
+      <figure class="shot hidden" id="shot-5" role="tabpanel" aria-labelledby="tab-5"><img src="img/voronoi.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt5" alt="DiaDisk mit Voronoi-Treemap in den Farben „Pastell“"><figcaption data-i18n="c5">Voronoi-Treemap: organisch geformte Zellen, hier in den Farben „Pastell“.</figcaption></figure>
+      <figure class="shot hidden" id="shot-6" role="tabpanel" aria-labelledby="tab-6"><img src="img/tree-languages.webp" width="1400" height="939" loading="lazy" data-i18n-alt="alt6" alt="DiaDisk mit Verzeichnisbaum und geöffneter Sprachauswahl"><figcaption data-i18n="c6">Verzeichnisbaum mit Größenbalken und Prozentwerten. Im Bild: die Auswahl unter 25 Sprachen.</figcaption></figure>
     </div>
   </section>
 
@@ -106,7 +114,7 @@
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5h.01"/></svg></div><h3 data-i18n="f5t">Ehrlich bei Lücken</h3><p data-i18n="f5d">Sind Ordner gesperrt oder von macOS geschützt, weist DiaDisk darauf hin, dass die Größen unvollständig sind. „Details …“ zeigt die Liste.</p></div>
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l14 7-6 2-2 6z"/></svg></div><h3 data-i18n="f6t">Aktionen im Ergebnis</h3><p data-i18n="f6d">Im Finder anzeigen, Informationen, Pfad kopieren, In Terminal öffnen oder In den Papierkorb legen, direkt aus der Ansicht.</p></div>
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="5" rx="1.5"/><rect x="4" y="14" width="10" height="5" rx="1.5"/></svg></div><h3 data-i18n="f7t">Logisch vs. belegt</h3><p data-i18n="f7d">Größe wie im Finder oder tatsächlich belegt: Du siehst beide Werte und erkennst, wo sie sich unterscheiden.</p></div>
-        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 4 5.7 4 9s-1.4 6.4-4 9c-2.6-2.6-4-5.7-4-9s1.4-6.4 4-9z"/></svg></div><h3 data-i18n="f8t">25 Sprachen, 8 Farbschemen</h3><p data-i18n="f8d">Beim ersten Start wählt DiaDisk deine Systemsprache. Farben: Standard, Pastell, Ozean, Sonnenuntergang, Kontrastreich, Blautöne, Ampelgradient, Schwarz-Weiß.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 4 5.7 4 9s-1.4 6.4-4 9c-2.6-2.6-4-5.7-4-9s1.4-6.4 4-9z"/></svg></div><h3 data-i18n="f8t">25 Sprachen, 8 Farbvarianten</h3><p data-i18n="f8d">Beim ersten Start wählt DiaDisk deine Systemsprache. Farben: Standard, Pastell, Ozean, Sonnenuntergang, Kontrastreich, Blautöne, Ampelgradient, Schwarz-Weiß.</p></div>
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div><h3 data-i18n="f9t">100 % lokal</h3><p data-i18n="f9d">Kein Tracking, keine Werbung, keine Drittanbieter-Software. Dateinamen, Pfade und Scan-Ergebnisse verlassen deinen Mac nie.</p></div>
       </div>
     </div>
@@ -118,8 +126,8 @@
       <p class="sub" data-i18n="pr_sub">Erst ausprobieren, dann entscheiden. Kein Abo.</p>
       <div class="plans">
         <div class="card plan"><span class="step">1</span><h3 data-i18n="pr_p1t">7 Tage testen</h3><p data-i18n="pr_p1d">Alle Funktionen, ohne Konto und ohne Einschränkung.</p></div>
-        <div class="card plan"><span class="step">2</span><h3 data-i18n="pr_p2t">Kostenlos nutzen (reduzierter Umfang)</h3><p data-i18n="pr_p2d">Eine Ansicht und das Standard-Farbschema bleiben dauerhaft kostenlos nutzbar.</p></div>
-        <div class="card plan featured"><span class="step">3</span><h3 data-i18n="pr_p3t">Ein Kaffee spenden und alles freischalten</h3><div class="price"><span data-i18n="pr_p3p">ab 1,99 €</span> <em class="intro" data-i18n="pr_intro">Einführungspreis</em></div><p data-i18n="pr_p3d">„Zahl, was du willst“ ab 1,99 € (Einführungspreis) für dauerhafte Freischaltung aller Funktionen auf bis zu 2 Macs – und du unterstützt mich direkt dabei, neue Apps und Updates für macOS zu entwickeln. Vielen Dank!</p>
+        <div class="card plan"><span class="step">2</span><h3 data-i18n="pr_p2t">Kostenlos nutzen (reduzierter Umfang)</h3><p data-i18n="pr_p2d">Die Eiszapfen-Ansicht und die Standardfarben bleiben dauerhaft kostenlos nutzbar.</p></div>
+        <div class="card plan featured"><span class="step">3</span><h3 data-i18n="pr_p3t">Ein Kaffee spenden und alles freischalten</h3><div class="price"><span data-i18n="pr_p3p">ab 1,99 € zzgl. MwSt.</span> <em class="intro" data-i18n="pr_intro">Einführungspreis</em></div><p data-i18n="pr_p3d">„Zahl, was du willst“ ab 1,99 € zzgl. MwSt. (Einführungspreis) für dauerhafte Freischaltung aller Funktionen auf bis zu 2 Macs – und du unterstützt mich direkt dabei, neue Apps und Updates für macOS zu entwickeln. Vielen Dank!</p>
           <a class="btn btn-primary buy-link hidden" target="_blank" rel="noopener" data-i18n="btn_buy">Lizenz kaufen (Zahl, was du willst)</a></div>
       </div>
     </div>
@@ -153,7 +161,7 @@
           <p class="small" data-i18n="dl_note">Bitte den Hinweis zur fehlenden Notarisierung beachten.</p>
           <p class="small"><b>SHA-256</b></p>
           <div class="hash">
-            <code id="sha-value">c344b0406513ef0e00ab67a39a12b79518e194bcadb966845ec18e23baa49739</code>
+            <code id="sha-value">4717e723f60859bca482bdd2450f86080691063848cd6c57974c3d2183cc30c4</code>
             <button type="button" id="sha-copy" data-i18n="sha_copy">Kopieren</button>
           </div>
           <p class="small"><span data-i18n="sha_hint">Prüfen im Terminal:</span> <code class="mono">shasum -a 256 DiaDisk.zip</code> · <a href="downloads/DiaDisk.zip.sha256" download>.sha256</a></p>

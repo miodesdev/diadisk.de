@@ -2,9 +2,9 @@
 
 ## Vor dem Hochladen ergänzen
 1. Logo und Favicons sind enthalten (`logo-light/dark.svg`, `favicon.svg`, `favicon*`, `apple-touch-icon.png`, `og-image.jpg`).
-2. `downloads/DiaDisk.zip` und `DiaDisk.zip.sha256` liegen bei.
+2. `downloads/DiaDisk.zip` und `DiaDisk.zip.sha256` liegen bei; das Demo-Video liegt in `video/`.
 3. `PAYHIP_URL` in `app.js` ist gesetzt (leer = Kaufen-Buttons ausgeblendet).
-4. Bei einer neuen Version ZIP ersetzen, `.sha256` neu erzeugen und den SHA-256-Wert in `index.html` anpassen.
+4. Bei einer neuen Version ZIP ersetzen, `.sha256` neu erzeugen und den SHA-256-Wert in `index.html` anpassen (`shasum -a 256 downloads/DiaDisk.zip`).
 
 ## Aktivieren
 1. Neues **öffentliches** Repository anlegen und den Inhalt dieses Ordners in den Wurzelordner pushen.
