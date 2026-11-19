@@ -101,10 +101,6 @@
   "sha_copied": "Kopiert ✓",
   "sha_copy": "Kopieren",
   "sha_hint": "Prüfen im Terminal:",
-  "st_dl": "Download-Klicks",
-  "st_note": "Anonyme Zähler, Details in der <button type=\"button\" class=\"linkbtn\" data-modal=\"datenschutz\">Datenschutzerklärung</button>.",
-  "st_today": "Besucher heute",
-  "st_total": "Besucher gesamt",
   "v0": "Start",
   "v1": "Strahl",
   "v2": "Kacheln",
@@ -214,10 +210,6 @@
   "sha_copied": "Copied ✓",
   "sha_copy": "Copy",
   "sha_hint": "Verify in Terminal:",
-  "st_dl": "Download clicks",
-  "st_note": "Anonymous counters, details in the <button type=\"button\" class=\"linkbtn\" data-modal=\"datenschutz\">privacy policy</button>.",
-  "st_today": "Visitors today",
-  "st_total": "Total visitors",
   "v0": "Start",
   "v1": "Sunburst",
   "v2": "Treemap",
@@ -327,10 +319,6 @@
   "sha_copied": "Copiato ✓",
   "sha_copy": "Copia",
   "sha_hint": "Verifica nel Terminale:",
-  "st_dl": "Clic sul download",
-  "st_note": "Contatori anonimi, dettagli nell’<button type=\"button\" class=\"linkbtn\" data-modal=\"datenschutz\">informativa sulla privacy</button>.",
-  "st_today": "Visitatori oggi",
-  "st_total": "Visitatori totali",
   "v0": "Home",
   "v1": "Raggiera",
   "v2": "Riquadri",
@@ -440,10 +428,6 @@
   "sha_copied": "Скопировано ✓",
   "sha_copy": "Копировать",
   "sha_hint": "Проверка в Терминале:",
-  "st_dl": "Нажатий «Скачать»",
-  "st_note": "Анонимные счётчики, подробности в <button type=\"button\" class=\"linkbtn\" data-modal=\"datenschutz\">политике конфиденциальности</button>.",
-  "st_today": "Посетителей сегодня",
-  "st_total": "Всего посетителей",
   "v0": "Старт",
   "v1": "Лучевая",
   "v2": "Плитки",
@@ -499,7 +483,6 @@
       b.classList.toggle('on', b.getAttribute('data-lang') === l);
     });
     updateMail();
-    if (typeof renderStats === 'function') renderStats();
     var ov = $('overlay');
     if (!ov.classList.contains('hidden')) openModal(ov.getAttribute('data-modal'));
   }
@@ -689,47 +672,6 @@
   $('ct-topic').addEventListener('change', updateMail);
 
 
-  // --- Zähler (statisch gehostet, Zählung über externen Dienst) ---
-  // Anbieter: CounterAPI (https://counterapi.dev). Wechsel des Dienstes: nur CNT anpassen (und CSP in index.html).
-  var CNT = { base: 'https://api.counterapi.dev/v1/', ns: 'diadisk-de' };
-  var COUNT_ONCE_PER_DAY = true;   // true: Besucher pro Browser und Tag nur einmal zählen
-  var stats = { total: null, today: null, dl: null };
-
-  function cnt(name, action) {
-    var url = CNT.base + CNT.ns + '/' + name + (action ? '/' + action : '');
-    return fetch(url, { cache: 'no-store', keepalive: true, credentials: 'omit', referrerPolicy: 'no-referrer' })
-      .then(function (r) { if (!r.ok) throw new Error('http'); return r.json(); })
-      .then(function (j) {
-        var n = (j && (j.count !== undefined ? j.count : j.value));
-        if (typeof n !== 'number') throw new Error('shape');
-        return n;
-      });
-  }
-  function renderStats() {
-    var nf; try { nf = new Intl.NumberFormat(lang); } catch (e) { nf = { format: String } }
-    [['total', 'st-total'], ['today', 'st-today'], ['dl', 'st-dl']].forEach(function (p) {
-      var el = $(p[1]); if (el) el.textContent = stats[p[0]] === null ? '–' : nf.format(stats[p[0]]);
-    });
-  }
-  function setStat(key, promise) {
-    promise.then(function (n) { stats[key] = n; renderStats(); }).catch(function () {});
-  }
-  function initCounters() {
-    var d = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-    var dayName = 'visits-' + d, last = null;
-    try { last = localStorage.getItem('dd_visit'); } catch (e) {}
-    var count = !COUNT_ONCE_PER_DAY || last !== d;
-    if (count) { try { localStorage.setItem('dd_visit', d); } catch (e) {} }
-    setStat('total', cnt('visits-total', count ? 'up' : ''));
-    setStat('today', cnt(dayName, count ? 'up' : ''));
-    setStat('dl', cnt('downloads', ''));
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest('a[href$=".zip"]');
-      if (!a) return;
-      setStat('dl', cnt('downloads', 'up'));
-    });
-  }
-
   // --- Mobile-Menü (Burger) ---
   document.documentElement.classList.add('js');
   var hdr = document.querySelector('header.top'), burger = document.querySelector('.burger');
@@ -745,6 +687,4 @@
 
   showTab(1);
   setLanguage(lang, false);
-  renderStats();
-  initCounters();
 })();

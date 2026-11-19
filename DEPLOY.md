@@ -15,8 +15,8 @@
 ## Was sich gegenüber der PHP-Version geändert hat
 - Entfernt: `stats.php`, `download.php`, `contact.php`, `purge.php`, `*-lib.php`, `*-config.php`, `danke.*`, `.htaccess`.
 - Notarisierungs-Fortschrittsbalken ist weg (braucht ein Backend).
-- Zähler (Besucher gesamt, Besucher heute, Download-Klicks): laufen über den externen Dienst CounterAPI (`api.counterapi.dev`), Einstellungen oben in `initCounters` in `app.js` (`CNT`, `COUNT_ONCE_PER_DAY`). Die CSP in `index.html` erlaubt nur diese eine Adresse. Wechsel des Dienstes: `CNT` und `connect-src` anpassen sowie Abschnitt 3/4 der Datenschutzerklärung in `legal.js`.
+- Zähler (Besucher/Download-Klicks) und der externe Dienst CounterAPI wurden entfernt; die Seite lädt nichts von Drittservern.
 - Kontakt: Themenauswahl + `mailto:`-Link statt Formular.
-- Download: direkter Link auf die Datei im Repo; Klicks auf die Download-Buttons werden über den Zähler gezählt.
+- Download: direkter Link auf die Datei im Repo (keine Zählung).
 - Sicherheits-Header: nur per `<meta>`-CSP möglich. `frame-ancestors`, HSTS und X-Frame-Options lassen sich auf GitHub Pages nicht setzen.
-- `legal.js`: Hosting-Abschnitt (GitHub), Zähler- und Formularabschnitt in allen 4 Sprachen angepasst (Abschnitt 3 und 4 beschreiben jetzt CounterAPI und den Local-Storage-Eintrag `dd_visit`). Bitte vor Veröffentlichung selbst prüfen oder juristisch prüfen lassen.
+- `legal.js`: Hosting-Abschnitt (GitHub) und Abschnitt „Externe Ressourcen, lokale Speicherung“ (nur `selectedLang` und `glass`) in allen 4 Sprachen. Bitte vor Veröffentlichung selbst prüfen oder juristisch prüfen lassen.
