@@ -112,7 +112,10 @@
   "v5": "Voronoi",
   "v6": "Baum",
   "views_sub": "Derselbe Scan, sechs Blickwinkel. Wähle die Ansicht, die für dich am besten lesbar ist.",
-  "views_title": "Sechs Ansichten, ein Ergebnis"
+  "views_title": "Sechs Ansichten, ein Ergebnis",
+  "a_prev": "Vorheriges Bild",
+  "a_next": "Nächstes Bild",
+  "f_glass": "Glas-Hintergrund"
  },
  "en": {
   "alt0": "DiaDisk home screen with drives and the settings panel",
@@ -221,7 +224,10 @@
   "v5": "Voronoi",
   "v6": "Tree",
   "views_sub": "The same scan from six angles. Pick the view that reads best for you.",
-  "views_title": "Six views, one result"
+  "views_title": "Six views, one result",
+  "a_prev": "Previous image",
+  "a_next": "Next image",
+  "f_glass": "Glass background"
  },
  "it": {
   "alt0": "Schermata iniziale di DiaDisk con i volumi e il pannello delle impostazioni",
@@ -330,7 +336,10 @@
   "v5": "Voronoi",
   "v6": "Albero",
   "views_sub": "La stessa scansione da sei punti di vista. Scegli la vista che ti risulta più leggibile.",
-  "views_title": "Sei viste, un solo risultato"
+  "views_title": "Sei viste, un solo risultato",
+  "a_prev": "Immagine precedente",
+  "a_next": "Immagine successiva",
+  "f_glass": "Sfondo vetro"
  },
  "ru": {
   "alt0": "Стартовый экран DiaDisk со списком дисков и панелью настроек",
@@ -439,7 +448,10 @@
   "v5": "Вороной",
   "v6": "Дерево",
   "views_sub": "Одно сканирование, шесть точек зрения. Выберите вид, который вам удобнее читать.",
-  "views_title": "Шесть видов, один результат"
+  "views_title": "Шесть видов, один результат",
+  "a_prev": "Предыдущее изображение",
+  "a_next": "Следующее изображение",
+  "f_glass": "Стеклянный фон"
  }
 };
 
@@ -489,17 +501,45 @@
   }
 
   // --- Ansichten-Tabs ---
-  function showTab(n) {
+  var shotsEl = document.getElementById('shots');
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function syncArrows() {
+    var im = document.querySelector('.shot.on img');
+    if (shotsEl && im && im.offsetHeight) shotsEl.style.setProperty('--img-h', im.offsetHeight + 'px');
+  }
+  window.addEventListener('resize', syncArrows);
+  document.querySelectorAll('.shot img').forEach(function (im) { im.addEventListener('load', syncArrows); });
+  // Übergang: neues Bild gleitet mit Weichzeichner + Einblenden herein, das alte gleitet in Gegenrichtung hinaus
+  function showTab(n, dir) {
+    n = parseInt(n, 10);
     document.querySelectorAll('.tabs [role=tab]').forEach(function (b) {
       var on = b.getAttribute('data-tab') === String(n);
       b.classList.toggle('on', on);
       b.setAttribute('aria-selected', on ? 'true' : 'false');
       b.setAttribute('tabindex', on ? '0' : '-1');
     });
-    document.querySelectorAll('.shot').forEach(function (f) {
-      f.classList.toggle('hidden', f.id !== 'shot-' + n);
-    });
+    var cur = document.querySelector('.shot.on');
+    var nxt = document.getElementById('shot-' + n);
+    if (!nxt || nxt === cur) return;
+    var curN = cur ? parseInt(cur.id.slice(5), 10) : 0;
+    dir = dir || (n > curN ? 1 : -1);
+    var d = reduceMotion ? 0 : 56, sc = reduceMotion ? 1 : .98, bl = reduceMotion ? 'none' : 'blur(6px)';
+    nxt.style.transition = 'none';
+    nxt.style.opacity = '0';
+    nxt.style.filter = bl;
+    nxt.style.transform = 'translateX(' + (dir * d) + 'px) scale(' + sc + ')';
+    nxt.classList.add('on');
+    nxt.setAttribute('aria-hidden', 'false');
+    void nxt.offsetWidth;
+    nxt.style.transition = ''; nxt.style.opacity = ''; nxt.style.filter = ''; nxt.style.transform = '';
+    if (cur) {
+      cur.classList.remove('on');
+      cur.style.transform = 'translateX(' + (-dir * d) + 'px) scale(' + sc + ')';
+      cur.setAttribute('aria-hidden', 'true');
+    }
+    syncArrows();
   }
+  syncArrows();
   document.querySelector('.tabs').addEventListener('keydown', function (e) {
     var tabs = Array.prototype.slice.call(document.querySelectorAll('.tabs [role=tab]'));
     var i = tabs.indexOf(document.querySelector('.tabs .on')); if (i < 0) return;
@@ -509,34 +549,35 @@
     e.preventDefault(); showTab(tabs[i].getAttribute('data-tab')); tabs[i].focus();
   });
 
-  // --- Ansichten-Karussell: Auto-Wechsel nach 3 s, nach Klick/Wischen 6 s Pause ---
+  // --- Ansichten-Karussell: Auto-Wechsel nach 4 s, nach Klick/Wischen 8 s Pause ---
   (function () {
-    var AUTO_MS = 3000, HOLD_MS = 6000;
+    var AUTO_MS = 4000, HOLD_MS = 8000;
     var section = document.getElementById('ansichten');
     var tabs = document.querySelectorAll('.tabs [role=tab]');
     if (!section || !tabs.length) return;
     var timer = null, visible = false;
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     function current() {
       var on = document.querySelector('.tabs .on');
       return on ? parseInt(on.getAttribute('data-tab'), 10) : 0;
     }
     function schedule(ms) {
       clearTimeout(timer);
-      if (reduce || !visible || document.hidden) return;
+      if (!visible || document.hidden) return;
       timer = setTimeout(function () {
-        showTab((current() + 1) % tabs.length);
+        showTab((current() + 1) % tabs.length, 1);
         schedule(AUTO_MS);
       }, ms);
     }
-    // Eingabe durch den Nutzer: Bild bleibt 6 s stehen, danach läuft es weiter
-    function userShow(n) {
-      showTab((n + tabs.length) % tabs.length);
+    // Eingabe durch den Nutzer: Bild bleibt 8 s stehen, danach läuft es weiter
+    function userShow(n, dir) {
+      showTab((n + tabs.length) % tabs.length, dir);
       schedule(HOLD_MS);
     }
     section.addEventListener('click', function (e) {
       var tb = e.target.closest('.tabs [role=tab]');
       if (tb) { userShow(parseInt(tb.getAttribute('data-tab'), 10)); return; }
+      var ar = e.target.closest('.nav-arrow');
+      if (ar) { var dr = parseInt(ar.getAttribute('data-dir'), 10); userShow(current() + dr, dr); return; }
       if (e.target.closest('.shot img')) schedule(HOLD_MS);
     });
     section.addEventListener('keydown', function (e) {
@@ -553,17 +594,31 @@
       if (!tracking) return;
       tracking = false;
       var dx = e.clientX - sx, dy = e.clientY - sy;
-      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) userShow(current() + (dx < 0 ? 1 : -1));
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) userShow(current() + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
     });
     section.addEventListener('pointercancel', function () { tracking = false; });
     // Nur laufen lassen, solange der Bereich sichtbar und der Tab aktiv ist
     document.addEventListener('visibilitychange', function () { schedule(AUTO_MS); });
+    window.addEventListener('pageshow', function () { schedule(AUTO_MS); });
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (en) {
-        visible = en[0].isIntersecting;
+        visible = en[en.length - 1].isIntersecting;
         if (visible) schedule(AUTO_MS); else clearTimeout(timer);
-      }, { threshold: 0.25 }).observe(section);
+      }, { threshold: 0.01 }).observe(section);
     } else { visible = true; schedule(AUTO_MS); }
+  })();
+
+  // --- Glas-Hintergrund an/aus (Fußzeile) ---
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('glass-toggle');
+    if (!btn) return;
+    function apply(on) { root.classList.toggle('glass', on); btn.setAttribute('aria-checked', on ? 'true' : 'false'); }
+    apply(root.classList.contains('glass'));
+    btn.addEventListener('click', function () {
+      var on = !root.classList.contains('glass');
+      apply(on);
+      try { localStorage.setItem('glass', on ? '1' : '0'); } catch (e) {}
+    });
   })();
 
   // --- Modals (Rechtstexte) ---

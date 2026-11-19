@@ -72,10 +72,23 @@ section.block { padding:80px 0; }
 .tabs button { border:0; background:transparent; color:var(--text); font:inherit; font-size:.88rem; font-weight:500; min-height:36px; padding:6px 16px; border-radius:999px; cursor:pointer; }
 .tabs button:hover { color:var(--brand); }
 .tabs button.on { background:var(--surface); box-shadow:0 1px 4px rgba(0,0,0,.18); color:var(--text); }
-.shot { margin:0 auto; max-width:1000px; touch-action:pan-y; -webkit-user-select:none; user-select:none; animation:shotIn .45s ease; }
+.shots { position:relative; max-width:1000px; margin:0 auto; --img-h:300px; }
+.showcase { overflow-x:clip; }
+.shot { position:absolute; top:0; left:0; right:0; margin:0; opacity:0; visibility:hidden; pointer-events:none; transform:scale(.98); filter:blur(6px);
+  transition:opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1), filter .6s ease, visibility 0s linear .6s;
+  touch-action:pan-y; -webkit-user-select:none; user-select:none; }
+.shot.on { position:relative; opacity:1; visibility:visible; pointer-events:auto; transform:none; filter:none; transition-delay:0s; }
 .shot img { -webkit-user-drag:none; user-drag:none; cursor:pointer; }
-@keyframes shotIn { from { opacity:0; } to { opacity:1; } }
-@media (prefers-reduced-motion: reduce) { .shot { animation:none; } }
+@media (prefers-reduced-motion: reduce) { .shot { transition:opacity .4s ease, visibility 0s linear .4s; filter:none; transform:none; } .shot.on { transition-delay:0s; } }
+/* Pfeile zum Blättern */
+.nav-arrow { position:absolute; z-index:3; top:calc(var(--img-h) / 2 - 22px); width:44px; height:44px; padding:0; display:grid; place-items:center; border-radius:50%; cursor:pointer;
+  color:var(--text); background:color-mix(in srgb, var(--surface) 55%, transparent); border:1px solid color-mix(in srgb, var(--text) 16%, transparent);
+  -webkit-backdrop-filter:blur(12px) saturate(160%); backdrop-filter:blur(12px) saturate(160%); box-shadow:0 2px 10px rgba(0,0,0,.18);
+  opacity:.6; transition:opacity .2s, transform .2s, background .2s; }
+.nav-arrow.prev { left:10px; } .nav-arrow.next { right:10px; }
+.nav-arrow:hover, .nav-arrow:focus-visible { opacity:1; }
+.nav-arrow:active { transform:scale(.93); }
+.nav-arrow svg { display:block; }
 .shot img { display:block; width:100%; height:auto; filter:drop-shadow(0 24px 48px rgba(0,0,0,.28)); }
 .demo { padding:40px 0 8px; text-align:center; }
 .demo .sub, .demo h2 { text-align:center; margin-left:auto; margin-right:auto; }
@@ -140,6 +153,7 @@ footer .wrap { display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:spac
 footer .links { display:flex; flex-wrap:wrap; gap:4px 20px; }
 footer button { background:none; border:0; font:inherit; color:var(--muted); cursor:pointer; padding:8px 0; }
 footer button:hover { color:var(--text); text-decoration:underline; }
+footer .wrap > div:first-child a { color:inherit; } footer .wrap > div:first-child a:hover { color:var(--text); text-decoration:underline; }
 
 /* Modal */
 .overlay { position:fixed; inset:0; background:rgba(0,0,0,.45); -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); display:flex; align-items:center; justify-content:center; padding:16px; z-index:50; }
@@ -197,3 +211,37 @@ footer button { min-height:40px; }
 @media (pointer:coarse) and (min-width:861px) { nav.main a { padding:12px 0; } }
 @media (pointer:coarse) and (min-width:861px) { .lang button { min-height:36px; padding:6px 12px; } }
 .ico svg { display:block; }
+
+/* ===== Glas-Hintergrund (Apple-Glas, wie domainatcall.com); per Schalter in der Fußzeile an/aus ===== */
+html.glass { --pn:rgba(255,255,255,.62); --ln:rgba(255,255,255,.7); --bl:blur(28px) saturate(180%);
+  --gsh:0 8px 32px rgba(40,60,120,.12), inset 0 1px 0 rgba(255,255,255,.8);
+  --page:radial-gradient(60% 50% at 12% 0,#cfe3ff,transparent), radial-gradient(50% 40% at 92% 8%,#f1d8ff,transparent), radial-gradient(60% 50% at 50% 100%,#d4fff0,transparent), #f5f5f7; }
+@media (prefers-color-scheme: dark) {
+  html.glass { --pn:rgba(44,44,46,.55); --ln:rgba(255,255,255,.14);
+    --gsh:0 8px 32px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.1);
+    --page:radial-gradient(60% 50% at 12% 0,#1b2a66,transparent), radial-gradient(50% 40% at 92% 8%,#43205f,transparent), radial-gradient(60% 50% at 50% 100%,#0c3b3a,transparent), #000; }
+}
+html.glass body { background:transparent; }
+html.glass body::before { content:""; position:fixed; inset:0; z-index:-1; background:var(--page); }
+html.glass #funktionen, html.glass #kontakt { background:transparent; }
+html.glass .card, html.glass #funktionen .card, html.glass .hero-points li, html.glass .stat, html.glass .dl, html.glass footer {
+  background:var(--pn); -webkit-backdrop-filter:var(--bl); backdrop-filter:var(--bl); box-shadow:var(--gsh); }
+html.glass .card, html.glass #funktionen .card { border:1px solid var(--ln); }
+html.glass .plan.featured { border:2px solid var(--brand); }
+html.glass .hero-points li, html.glass .stat, html.glass .dl { border:1px solid var(--ln); }
+html.glass .notice { background:color-mix(in srgb, var(--warn-bg) 72%, transparent); -webkit-backdrop-filter:var(--bl); backdrop-filter:var(--bl); box-shadow:var(--gsh); }
+html.glass .tabs { background:var(--pn); -webkit-backdrop-filter:var(--bl); backdrop-filter:var(--bl); box-shadow:var(--gsh); border:1px solid var(--ln); }
+html.glass .tabs button.on { background:color-mix(in srgb, var(--surface) 80%, transparent); }
+html.glass .hash code, html.glass .hash button { background:color-mix(in srgb, var(--surface) 55%, transparent); }
+html.glass footer { border-top:1px solid var(--ln); border-radius:0; }
+html.glass .demo-shot video, html.glass .shot img { box-shadow:none; }
+@media (prefers-reduced-transparency: reduce) {
+  html.glass .card, html.glass #funktionen .card, html.glass .hero-points li, html.glass .stat, html.glass .dl, html.glass footer, html.glass .tabs { background:var(--surface); -webkit-backdrop-filter:none; backdrop-filter:none; }
+}
+/* Schalter in der Fußzeile */
+.glass-toggle { display:inline-flex; align-items:center; gap:10px; }
+.glass-toggle .sw { position:relative; width:38px; height:22px; border-radius:999px; background:color-mix(in srgb, var(--muted) 40%, transparent); transition:background .2s; flex:none; }
+.glass-toggle .sw::after { content:""; position:absolute; top:2px; left:2px; width:18px; height:18px; border-radius:50%; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.35); transition:transform .2s; }
+.glass-toggle[aria-checked="true"] .sw { background:var(--brand); }
+.glass-toggle[aria-checked="true"] .sw::after { transform:translateX(16px); }
+footer .glass-toggle:hover { text-decoration:none; color:var(--text); }

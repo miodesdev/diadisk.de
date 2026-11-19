@@ -24,6 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://diadisk.de/og-image.jpg">
 <link rel="stylesheet" href="style.css">
+<script src="glass-init.js"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DiaDisk","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 14 or later (Apple Silicon)","offers":{"@type":"Offer","price":"1.99","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"1.99","priceCurrency":"EUR","valueAddedTaxIncluded":false}},"url":"https://diadisk.de/","image":"https://diadisk.de/og-image.jpg"}</script>
 </head>
 <body>
@@ -92,13 +93,17 @@
         <button type="button" role="tab" aria-selected="false" aria-controls="shot-5" id="tab-5" data-tab="5" data-i18n="v5">Voronoi</button>
         <button type="button" role="tab" aria-selected="false" aria-controls="shot-6" id="tab-6" data-tab="6" data-i18n="v6">Baum</button>
       </div>
-      <figure class="shot" id="shot-0" role="tabpanel" aria-labelledby="tab-0"><img src="img/overview.webp" width="1392" height="780" data-i18n-alt="alt0" alt="DiaDisk Startseite mit Laufwerken und Einstellungen"><figcaption data-i18n="c0">Die Startseite: Laufwerke, dein Home-Verzeichnis und eigene Ordner, daneben die Einstellungen für Ansichten und Farben.</figcaption></figure>
-      <figure class="shot hidden" id="shot-1" role="tabpanel" aria-labelledby="tab-1"><img src="img/sunburst.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt1" alt="DiaDisk mit Strahl-Ansicht der Library in den Farben „Sonnenuntergang“, Seitenleiste mit Farben"><figcaption data-i18n="c1">Strahl-Ansicht: Ordnerebenen als Ringe, hier in den Farben „Sonnenuntergang“.</figcaption></figure>
-      <figure class="shot hidden" id="shot-2" role="tabpanel" aria-labelledby="tab-2"><img src="img/treemap.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt2" alt="DiaDisk mit Kachel-Ansicht in den Farben „Kontrastreich“"><figcaption data-i18n="c2">Kachel-Ansicht: Flächen entsprechen Größen, hier in den Farben „Kontrastreich“.</figcaption></figure>
-      <figure class="shot hidden" id="shot-3" role="tabpanel" aria-labelledby="tab-3"><img src="img/icicle.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt3" alt="DiaDisk mit Eiszapfen-Ansicht in den Farben „Ozean“"><figcaption data-i18n="c3">Eiszapfen-Ansicht: die Hierarchie in Spalten, hier in den Farben „Ozean“. Dauerhaft kostenlos.</figcaption></figure>
-      <figure class="shot hidden" id="shot-4" role="tabpanel" aria-labelledby="tab-4"><img src="img/circles.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt4" alt="DiaDisk mit Kreis-Verschachtelung in den Farben „Ozean“"><figcaption data-i18n="c4">Kreis-Verschachtelung: Ordner als ineinanderliegende Kreise, hier in den Farben „Ozean“.</figcaption></figure>
-      <figure class="shot hidden" id="shot-5" role="tabpanel" aria-labelledby="tab-5"><img src="img/voronoi.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt5" alt="DiaDisk mit Voronoi-Treemap in den Farben „Pastell“"><figcaption data-i18n="c5">Voronoi-Treemap: organisch geformte Zellen, hier in den Farben „Pastell“.</figcaption></figure>
-      <figure class="shot hidden" id="shot-6" role="tabpanel" aria-labelledby="tab-6"><img src="img/tree-languages.webp" width="1400" height="939" loading="lazy" data-i18n-alt="alt6" alt="DiaDisk mit Verzeichnisbaum und geöffneter Sprachauswahl"><figcaption data-i18n="c6">Verzeichnisbaum mit Größenbalken und Prozentwerten. Im Bild: die Auswahl unter 25 Sprachen.</figcaption></figure>
+      <div class="shots" id="shots">
+      <figure class="shot on" id="shot-0" aria-hidden="false" role="tabpanel" aria-labelledby="tab-0"><img src="img/overview.webp" width="1392" height="780" data-i18n-alt="alt0" alt="DiaDisk Startseite mit Laufwerken und Einstellungen"><figcaption data-i18n="c0">Die Startseite: Laufwerke, dein Home-Verzeichnis und eigene Ordner, daneben die Einstellungen für Ansichten und Farben.</figcaption></figure>
+      <figure class="shot" id="shot-1" aria-hidden="true" role="tabpanel" aria-labelledby="tab-1"><img src="img/sunburst.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt1" alt="DiaDisk mit Strahl-Ansicht der Library in den Farben „Sonnenuntergang“, Seitenleiste mit Farben"><figcaption data-i18n="c1">Strahl-Ansicht: Ordnerebenen als Ringe, hier in den Farben „Sonnenuntergang“.</figcaption></figure>
+      <figure class="shot" id="shot-2" aria-hidden="true" role="tabpanel" aria-labelledby="tab-2"><img src="img/treemap.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt2" alt="DiaDisk mit Kachel-Ansicht in den Farben „Kontrastreich“"><figcaption data-i18n="c2">Kachel-Ansicht: Flächen entsprechen Größen, hier in den Farben „Kontrastreich“.</figcaption></figure>
+      <figure class="shot" id="shot-3" aria-hidden="true" role="tabpanel" aria-labelledby="tab-3"><img src="img/icicle.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt3" alt="DiaDisk mit Eiszapfen-Ansicht in den Farben „Ozean“"><figcaption data-i18n="c3">Eiszapfen-Ansicht: die Hierarchie in Spalten, hier in den Farben „Ozean“. Dauerhaft kostenlos.</figcaption></figure>
+      <figure class="shot" id="shot-4" aria-hidden="true" role="tabpanel" aria-labelledby="tab-4"><img src="img/circles.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt4" alt="DiaDisk mit Kreis-Verschachtelung in den Farben „Ozean“"><figcaption data-i18n="c4">Kreis-Verschachtelung: Ordner als ineinanderliegende Kreise, hier in den Farben „Ozean“.</figcaption></figure>
+      <figure class="shot" id="shot-5" aria-hidden="true" role="tabpanel" aria-labelledby="tab-5"><img src="img/voronoi.webp" width="1392" height="780" loading="lazy" data-i18n-alt="alt5" alt="DiaDisk mit Voronoi-Treemap in den Farben „Pastell“"><figcaption data-i18n="c5">Voronoi-Treemap: organisch geformte Zellen, hier in den Farben „Pastell“.</figcaption></figure>
+      <figure class="shot" id="shot-6" aria-hidden="true" role="tabpanel" aria-labelledby="tab-6"><img src="img/tree-languages.webp" width="1400" height="939" loading="lazy" data-i18n-alt="alt6" alt="DiaDisk mit Verzeichnisbaum und geöffneter Sprachauswahl"><figcaption data-i18n="c6">Verzeichnisbaum mit Größenbalken und Prozentwerten. Im Bild: die Auswahl unter 25 Sprachen.</figcaption></figure>
+        <button type="button" class="nav-arrow prev" data-dir="-1" data-i18n-aria="a_prev" aria-label="Vorheriges Bild"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" class="nav-arrow next" data-dir="1" data-i18n-aria="a_next" aria-label="Nächstes Bild"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
   </section>
 
@@ -199,12 +204,13 @@
 
 <footer>
   <div class="wrap">
-    <div>&copy; 2026 Dmitry Korotkiy · <span data-i18n="f_rights">Alle Rechte vorbehalten.</span></div>
+    <div>&copy; 2026 Dmitry Korotkiy · <a href="https://dk-ai.de" target="_blank" rel="noopener">DK-AI</a> · <span data-i18n="f_rights">Alle Rechte vorbehalten.</span></div>
     <div class="links">
       <button type="button" data-modal="impressum" data-i18n="f_imp">Impressum</button>
       <button type="button" data-modal="datenschutz" data-i18n="f_data">Datenschutz</button>
       <button type="button" data-modal="widerruf" data-i18n="f_rev">Widerruf</button>
       <button type="button" data-modal="ki" data-i18n="f_ai">KI-Hinweis</button>
+      <button type="button" class="glass-toggle" id="glass-toggle" role="switch" aria-checked="true"><span class="sw" aria-hidden="true"></span><span data-i18n="f_glass">Glas-Hintergrund</span></button>
     </div>
   </div>
 </footer>
