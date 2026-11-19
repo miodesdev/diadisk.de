@@ -509,6 +509,63 @@
     e.preventDefault(); showTab(tabs[i].getAttribute('data-tab')); tabs[i].focus();
   });
 
+  // --- Ansichten-Karussell: Auto-Wechsel nach 3 s, nach Klick/Wischen 6 s Pause ---
+  (function () {
+    var AUTO_MS = 3000, HOLD_MS = 6000;
+    var section = document.getElementById('ansichten');
+    var tabs = document.querySelectorAll('.tabs [role=tab]');
+    if (!section || !tabs.length) return;
+    var timer = null, visible = false;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function current() {
+      var on = document.querySelector('.tabs .on');
+      return on ? parseInt(on.getAttribute('data-tab'), 10) : 0;
+    }
+    function schedule(ms) {
+      clearTimeout(timer);
+      if (reduce || !visible || document.hidden) return;
+      timer = setTimeout(function () {
+        showTab((current() + 1) % tabs.length);
+        schedule(AUTO_MS);
+      }, ms);
+    }
+    // Eingabe durch den Nutzer: Bild bleibt 6 s stehen, danach läuft es weiter
+    function userShow(n) {
+      showTab((n + tabs.length) % tabs.length);
+      schedule(HOLD_MS);
+    }
+    section.addEventListener('click', function (e) {
+      var tb = e.target.closest('.tabs [role=tab]');
+      if (tb) { userShow(parseInt(tb.getAttribute('data-tab'), 10)); return; }
+      if (e.target.closest('.shot img')) schedule(HOLD_MS);
+    });
+    section.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') schedule(HOLD_MS);
+    });
+    // Wischen: nach links = nächstes Bild, nach rechts = vorheriges Bild
+    var sx = 0, sy = 0, tracking = false;
+    function swipeTarget(e) { return e.target.closest && e.target.closest('.shot'); }
+    section.addEventListener('pointerdown', function (e) {
+      if (!swipeTarget(e)) return;
+      tracking = true; sx = e.clientX; sy = e.clientY;
+    });
+    section.addEventListener('pointerup', function (e) {
+      if (!tracking) return;
+      tracking = false;
+      var dx = e.clientX - sx, dy = e.clientY - sy;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) userShow(current() + (dx < 0 ? 1 : -1));
+    });
+    section.addEventListener('pointercancel', function () { tracking = false; });
+    // Nur laufen lassen, solange der Bereich sichtbar und der Tab aktiv ist
+    document.addEventListener('visibilitychange', function () { schedule(AUTO_MS); });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) {
+        visible = en[0].isIntersecting;
+        if (visible) schedule(AUTO_MS); else clearTimeout(timer);
+      }, { threshold: 0.25 }).observe(section);
+    } else { visible = true; schedule(AUTO_MS); }
+  })();
+
   // --- Modals (Rechtstexte) ---
   function openModal(type) {
     var texts = (window.LEGAL || {})[lang] || (window.LEGAL || {}).de || {};
@@ -525,7 +582,7 @@
   }
   document.addEventListener('click', function (e) {
     var tb = e.target.closest('.tabs [role=tab]');
-    if (tb) { showTab(tb.getAttribute('data-tab')); return; }
+    if (tb) return;
     var m = e.target.closest('[data-modal]');
     if (m && m.id !== 'overlay') { e.preventDefault(); openModal(m.getAttribute('data-modal')); return; }
     var lb = e.target.closest('.lang button');
