@@ -60,6 +60,7 @@
   "f_data": "Datenschutz",
   "f_imp": "Impressum",
   "f_rev": "Widerruf",
+  "f_eula": "Nutzungsbedingungen",
   "f_rights": "Alle Rechte vorbehalten.",
   "ft_sub": "Alles, was du brauchst, um schnell zu verstehen, wohin dein Speicherplatz verschwindet.",
   "ft_title": "Funktionen",
@@ -67,7 +68,7 @@
   "hero_b2": "<b>Ultraschnell &amp; Nativ:</b> Für Apple Silicon entwickelt – maximale Performance bei minimalem Ressourcenverbrauch.",
   "hero_b3": "<b>100 % Privat &amp; Sicher:</b> Kein Konto, keine Cloud, keine Telemetrie. Deine Daten bleiben garantiert da, wo sie hingehören: auf deinem Mac.",
   "hero_b4": "<b>Made in Germany:</b> Sorgfältige Entwicklung, Datenschutz nach höchsten Standards und kompromisslose Qualität.",
-  "hero_meta": "macOS 14+ · Apple Silicon (M1 oder neuer) · 7 Tage alles testen. Danach bleiben die Eiszapfen-Ansicht und die Standardfarben kostenlos, alles Weitere ab 1,99 € zzgl. MwSt. (Einführungspreis).",
+  "hero_meta": "macOS 14+ · Apple Silicon (M1 oder neuer) · 7 Tage alles testen. Danach bleiben die Eiszapfen-Ansicht und die Standardfarben kostenlos, alles Weitere ab 2,99 € inkl. MwSt.",
   "hero_sub": "DiaDisk – der smarte Speicher-Analyzer für deinen Mac – verwandelt unübersichtliche Datenberge in sechs verschiedene, klare, interaktive Ansichten.",
   "hero_tag": "Speicheranalyse für den Mac",
   "hero_title": "Sieh, was deinen Mac füllt.",
@@ -94,7 +95,7 @@
   "pr_s2a": "Gratis bleiben",
   "pr_s2ad": "Nutze die Eiszapfen-Ansicht und Standardfarben <strong>dauerhaft kostenlos</strong>.",
   "pr_s2b": "Vollversion sichern",
-  "pr_s2bd": "Schalte mit <strong>einmaligem</strong> Preis ab <strong>1,99 € zzgl. MwSt.</strong> (Einführungspreis) alle Funktionen für bis zu 2 Macs frei – <strong>kein Abo</strong>.",
+  "pr_s2bd": "Schalte mit <strong>einmaligem</strong> Preis ab <strong>2,99 € inkl. MwSt.</strong> alle Funktionen für bis zu 2 Macs frei – <strong>kein Abo</strong>.",
   "pr_s3t": "Unterstützen",
   "pr_s3d": "Mit deinem Preis „Zahl, was du willst“ hilfst du mir, die App stetig weiterzuentwickeln. Vielen Dank!",
   "sha_copied": "Kopiert ✓",
@@ -172,6 +173,7 @@
   "f_data": "Privacy Policy",
   "f_imp": "Imprint",
   "f_rev": "Withdrawal",
+  "f_eula": "Terms of Use",
   "f_rights": "All rights reserved.",
   "ft_sub": "Everything you need to quickly understand where your storage went.",
   "ft_title": "Features",
@@ -179,7 +181,7 @@
   "hero_b2": "<b>Ultra-fast &amp; native:</b> Built for Apple Silicon – maximum performance with minimal resource usage.",
   "hero_b3": "<b>100% private &amp; secure:</b> No account, no cloud, no telemetry. Your data stays exactly where it belongs: on your Mac.",
   "hero_b4": "<b>Made in Germany:</b> Careful development, data protection to the highest standards and uncompromising quality.",
-  "hero_meta": "macOS 14+ · Apple Silicon (M1 or newer) · Try everything for 7 days. After that, the icicle view and default colors stay free, everything else from €1.99 plus VAT (introductory price).",
+  "hero_meta": "macOS 14+ · Apple Silicon (M1 or newer) · Try everything for 7 days. After that, the icicle view and default colors stay free, everything else from €2.99 incl. VAT.",
   "hero_sub": "DiaDisk – the smart storage analyzer for your Mac – turns unwieldy mountains of data into six different, clear, interactive views.",
   "hero_tag": "Disk space analyzer for Mac",
   "hero_title": "See what’s filling your Mac.",
@@ -206,7 +208,7 @@
   "pr_s2a": "Stay free",
   "pr_s2ad": "Use the icicle view and the default colors <strong>free for good</strong>.",
   "pr_s2b": "Get the full version",
-  "pr_s2bd": "Unlock all features on up to 2 Macs for a <strong>one-time</strong> price from <strong>€1.99 plus VAT</strong> (introductory price) – <strong>no subscription</strong>.",
+  "pr_s2bd": "Unlock all features on up to 2 Macs for a <strong>one-time</strong> price from <strong>€2.99 incl. VAT</strong> – <strong>no subscription</strong>.",
   "pr_s3t": "Support",
   "pr_s3d": "With your “pay what you want” price you help me keep developing the app. Thank you!",
   "sha_copied": "Copied ✓",
@@ -284,6 +286,7 @@
   "f_data": "Privacy",
   "f_imp": "Note legali",
   "f_rev": "Recesso",
+  "f_eula": "Condizioni d’uso",
   "f_rights": "Tutti i diritti riservati.",
   "ft_sub": "Tutto ciò che serve per capire rapidamente dove è finito il tuo spazio.",
   "ft_title": "Funzioni",
@@ -291,7 +294,7 @@
   "hero_b2": "<b>Ultraveloce e nativa:</b> sviluppata per Apple Silicon – massime prestazioni con un consumo minimo di risorse.",
   "hero_b3": "<b>100% privata e sicura:</b> nessun account, nessun cloud, nessuna telemetria. I tuoi dati restano dove devono stare: sul tuo Mac.",
   "hero_b4": "<b>Made in Germany:</b> sviluppo accurato, protezione dei dati secondo i più alti standard e qualità senza compromessi.",
-  "hero_meta": "macOS 14+ · Apple Silicon (M1 o successivi) · Prova tutto per 7 giorni. Poi la vista icicle e i colori predefiniti restano gratuiti, il resto da 1,99 € più IVA (prezzo di lancio).",
+  "hero_meta": "macOS 14+ · Apple Silicon (M1 o successivi) · Prova tutto per 7 giorni. Poi la vista icicle e i colori predefiniti restano gratuiti, il resto da 2,99 € IVA inclusa.",
   "hero_sub": "DiaDisk – lo smart analizzatore di spazio per il tuo Mac – trasforma montagne di dati confuse in sei viste diverse, chiare e interattive.",
   "hero_tag": "Analisi dello spazio su disco per Mac",
   "hero_title": "Scopri cosa riempie il tuo Mac.",
@@ -318,7 +321,7 @@
   "pr_s2a": "Resta gratis",
   "pr_s2ad": "Usa la vista icicle e i colori predefiniti <strong>gratis per sempre</strong>.",
   "pr_s2b": "Ottieni la versione completa",
-  "pr_s2bd": "Sblocca tutte le funzioni su un massimo di 2 Mac con un prezzo <strong>una tantum</strong> da <strong>1,99 € + IVA</strong> (prezzo di lancio) – <strong>nessun abbonamento</strong>.",
+  "pr_s2bd": "Sblocca tutte le funzioni su un massimo di 2 Mac con un prezzo <strong>una tantum</strong> da <strong>2,99 € IVA inclusa</strong> – <strong>nessun abbonamento</strong>.",
   "pr_s3t": "Sostieni",
   "pr_s3d": "Con il tuo prezzo «Paga quanto vuoi» mi aiuti a sviluppare l’app in modo continuo. Grazie mille!",
   "sha_copied": "Copiato ✓",
@@ -396,6 +399,7 @@
   "f_data": "Конфиденциальность",
   "f_imp": "Выходные данные",
   "f_rev": "Отказ от договора",
+  "f_eula": "Условия использования",
   "f_rights": "Все права защищены.",
   "ft_sub": "Всё, что нужно, чтобы быстро понять, куда уходит место на диске.",
   "ft_title": "Возможности",
@@ -403,7 +407,7 @@
   "hero_b2": "<b>Сверхбыстро и нативно:</b> разработано для Apple Silicon – максимальная производительность при минимальном расходе ресурсов.",
   "hero_b3": "<b>100 % приватно и безопасно:</b> без аккаунта, без облака, без телеметрии. Ваши данные остаются там, где им место: на вашем Mac.",
   "hero_b4": "<b>Made in Germany:</b> тщательная разработка, защита данных по высочайшим стандартам и бескомпромиссное качество.",
-  "hero_meta": "macOS 14+ · Apple Silicon (M1 и новее) · 7 дней все функции. Потом вид «сосульки» и стандартные цвета остаются бесплатными, остальное от 1,99 € плюс НДС (вводная цена).",
+  "hero_meta": "macOS 14+ · Apple Silicon (M1 и новее) · 7 дней все функции. Потом вид «сосульки» и стандартные цвета остаются бесплатными, остальное от 2,99 € с НДС.",
   "hero_sub": "DiaDisk – умный анализатор дискового пространства для вашего Mac – превращает запутанные горы данных в шесть разных, понятных, интерактивных видов.",
   "hero_tag": "Анализ дискового пространства для Mac",
   "hero_title": "Узнайте, что занимает место на вашем Mac.",
@@ -430,7 +434,7 @@
   "pr_s2a": "Остаться бесплатно",
   "pr_s2ad": "Вид «сосульки» и стандартные цвета доступны <strong>бесплатно навсегда</strong>.",
   "pr_s2b": "Получить полную версию",
-  "pr_s2bd": "Разблокируйте все функции на 2 Mac за <strong>единоразовую</strong> цену от <strong>1,99 € плюс НДС</strong> (вводная цена) – <strong>без подписки</strong>.",
+  "pr_s2bd": "Разблокируйте все функции на 2 Mac за <strong>единоразовую</strong> цену от <strong>2,99 € с НДС</strong> – <strong>без подписки</strong>.",
   "pr_s3t": "Поддержите",
   "pr_s3d": "Цена по принципу «Плати сколько хочешь» помогает мне постоянно развивать приложение. Спасибо!",
   "sha_copied": "Скопировано ✓",
@@ -623,9 +627,12 @@
 
   // --- Modals (Rechtstexte) ---
   function openModal(type) {
-    var texts = (window.LEGAL || {})[lang] || (window.LEGAL || {}).de || {};
-    if (!texts[type]) return;
-    $('modal-body').innerHTML = texts[type];
+    var L = window.LEGAL || {};
+    var texts = L[lang] || L.de || {};
+    // Nutzungsbedingungen gibt es nur auf Deutsch und Englisch; andere Sprachen zeigen die englische Fassung
+    var html = texts[type] || (type === 'eula' && L.en && L.en.eula) || (L.de || {})[type];
+    if (!html) return;
+    $('modal-body').innerHTML = html;
     var ov = $('overlay');
     ov.setAttribute('data-modal', type);
     ov.classList.remove('hidden');

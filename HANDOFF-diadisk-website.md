@@ -24,18 +24,19 @@ Statische Ein-Seiten-Website für die macOS-App DiaDisk 1.0.0 (Speicheranalyse, 
 | `DEPLOY.md` | Schritt-für-Schritt-Veröffentlichung |
 
 ## 3. Aufbau der Seite (von oben)
-Kopfzeile (Logo, Navigation, Sprachwahl) → Hero (Download-Button, Kurzinfo) → Demo-Video (`#demo`) → Ansichten (7 Tabs mit Screenshots) → Funktionen (9 kompakte Karten) → Preis und Lizenz (3 Schritte, Einführungspreis) → Notarisierungs-Hinweis (kompakt) → Download (SHA-256, Zähler) → Kontakt (`mailto:`) → Fußzeile (Rechtstexte als Modals).
+Kopfzeile (Logo, Navigation, Sprachwahl) → Hero (Download-Button, Kurzinfo) → Demo-Video (`#demo`) → Ansichten (7 Tabs mit Screenshots) → Funktionen (9 kompakte Karten) → Preis und Lizenz (3 Schritte) → Notarisierungs-Hinweis (kompakt) → Download (SHA-256, Zähler) → Kontakt (`mailto:`) → Fußzeile (Rechtstexte als Modals).
 
 ## 4. Texte ändern
 - Jeder Text hat einen Schlüssel in `app.js` (`T.de`, `T.en`, `T.it`, `T.ru`). Neuer Text: Schlüssel in allen vier Sprachen anlegen und im HTML mit `data-i18n="schlüssel"` verwenden. Für Bildbeschreibungen `data-i18n-alt`.
 - Der Platzhaltertext in `index.html` sollte dem deutschen Text entsprechen (Anzeige ohne JavaScript).
 - „Made in Germany." bleibt in allen Sprachen englisch (steht am Ende von `hero_sub`).
 - Rechtstexte nur in `legal.js` ändern (gültiges JSON in `window.LEGAL = {...};`).
+- Nutzungs- und Lizenzbedingungen (EULA, Footer „Nutzungsbedingungen“, Modal `eula`): nur Deutsch und Englisch in `legal.js`; IT und RU zeigen die englische Fassung. Quelle ist `docs/EULA.md` im App-Projekt.
 
 ## 5. Wichtige Festlegungen
 - Einzige hinterlegte E-Mail-Adresse: `info@diadisk.de` (geprüft in `index.html`, `app.js`, `legal.js`; keine weitere vorhanden).
-- Preis „ab 1,99 € zzgl. MwSt.“ ist als **Einführungspreis** gekennzeichnet (Hero, Preiskarte, Meta-Description, `og:description`, JSON-LD mit `valueAddedTaxIncluded: false`; EN „plus VAT“, IT „più IVA“, RU „плюс НДС“).
-- Lizenzmodell: 7 Tage alles testen, danach Eiszapfen-Ansicht und Standardfarben kostenlos, alles Weitere „Zahl, was du willst“ ab 1,99 € zzgl. MwSt., bis zu 2 Macs, Verkauf über Payhip.
+- Preis „ab 2,99 € inkl. MwSt.“ (Bruttopreis; Hero, Preiskarte, Meta-Description, `og:description`, JSON-LD mit `price: 2.99` und `valueAddedTaxIncluded: true`; EN „incl. VAT“, IT „IVA inclusa“, RU „с НДС“).
+- Lizenzmodell: 7 Tage alles testen, danach Eiszapfen-Ansicht und Standardfarben kostenlos, alles Weitere „Zahl, was du willst“ ab 2,99 € inkl. MwSt., bis zu 2 Macs, Verkauf über Payhip.
 - Kein Backend, keine Cookies. Kontakt nur per `mailto:` (Themenauswahl setzt den Betreff).
 
 ## 6. Zähler (Besucher gesamt, Besucher heute, Download-Klicks)
