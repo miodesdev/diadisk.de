@@ -42,7 +42,7 @@ Kopfzeile (Logo, Navigation, Sprachwahl) → Hero (Download-Button, Kurzinfo) �
 ## 6. Offene Punkte vor dem Livegang
 1. Erledigt: `PAYHIP_URL` in `app.js` zeigt auf `https://payhip.com/b/aEo54` (öffentlicher Produktlink, kein Geheimnis).
 2. Erledigt: `downloads/DiaDisk.zip` und `.sha256` liegen bei. Bei neuer Version: ZIP ersetzen, `.sha256` neu erzeugen (`shasum -a 256 DiaDisk.zip`), SHA-256-Wert (nur `index.html`, Element `#sha-value`) und Größe (`dl_meta`) in `index.html`/`app.js`, Versionsnummer (`btn_dl`, `index.html`, JSON-LD) anpassen.
-3. Alle Rechtstexte (Impressum, Datenschutz, Widerruf, KI-Hinweis) vor Veröffentlichung juristisch prüfen lassen.
+3. Alle Rechtstexte (Impressum, Datenschutz, Widerrufshinweis, Nutzungsbedingungen, KI-Hinweis) vor Veröffentlichung juristisch prüfen lassen.
 4. Notarisierung: Hinweis in der Seite entfernen, sobald die App notarisiert ist (Abschnitt `#notarisierung`, Schlüssel `nt_*`; Verweise in `dl_note`).
 5. GitHub Pages: öffentliches Repository, Branch `main`, Ordner `/`, DNS auf GitHub, danach „Enforce HTTPS“.
 
