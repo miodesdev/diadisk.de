@@ -644,7 +644,7 @@
   function openModal(type) {
     var L = window.LEGAL || {};
     var texts = L[lang] || L.de || {};
-    // Nutzungsbedingungen gibt es nur auf Deutsch und Englisch; andere Sprachen zeigen die englische Fassung
+    // Nutzungsbedingungen gibt es auf Deutsch, Englisch, Italienisch und Russisch; weitere Sprachen zeigen die englische Fassung
     var html = texts[type] || (type === 'eula' && L.en && L.en.eula) || (L.de || {})[type];
     if (!html) return;
     var ov = $('overlay');
