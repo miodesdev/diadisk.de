@@ -19,4 +19,4 @@
 - Kontakt: Themenauswahl + `mailto:`-Link statt Formular.
 - Download: direkter Link auf die Datei im Repo (keine Zählung).
 - Sicherheits-Header: nur per `<meta>`-CSP möglich. `frame-ancestors`, HSTS und X-Frame-Options lassen sich auf GitHub Pages nicht setzen.
-- `legal.js`: Hosting-Abschnitt (GitHub) und Abschnitt „Externe Ressourcen, lokale Speicherung“ (nur `selectedLang` und `glass`) in allen 4 Sprachen. Bitte vor Veröffentlichung selbst prüfen oder juristisch prüfen lassen.
+- `legal.js`: Hosting-Abschnitt (GitHub) und Abschnitt „Externe Ressourcen, keine Speicherung im Browser“ (die Seite speichert nichts im Browser; Sprache und Glas-Schalter gelten nur pro Seitenaufruf) in allen 4 Sprachen. Bitte vor Veröffentlichung selbst prüfen oder juristisch prüfen lassen.

@@ -1,6 +1,3 @@
 // Glas-Hintergrund vor dem ersten Rendern setzen (verhindert Flackern). Standard: an.
-(function () {
-  var on = true;
-  try { if (localStorage.getItem('glass') === '0') on = false; } catch (e) {}
-  if (on) document.documentElement.classList.add('glass');
-})();
+// Es wird nichts im Browser gespeichert; der Schalter in der Fußzeile gilt nur für den aktuellen Seitenaufruf.
+document.documentElement.classList.add('glass');

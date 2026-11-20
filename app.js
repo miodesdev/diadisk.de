@@ -462,12 +462,9 @@
   var LANGS = ['de', 'en', 'it', 'ru'];
   var lang = 'de';
   try {
-    var saved = localStorage.getItem('selectedLang');
-    if (LANGS.indexOf(saved) >= 0) lang = saved;
-    else {
-      var nav = (navigator.language || 'de').slice(0, 2).toLowerCase();
-      if (LANGS.indexOf(nav) >= 0) lang = nav;
-    }
+    // Startsprache nur aus der Browsersprache; die Auswahl wird nicht gespeichert.
+    var nav = (navigator.language || 'de').slice(0, 2).toLowerCase();
+    if (LANGS.indexOf(nav) >= 0) lang = nav;
   } catch (e) {}
 
   var MAIL = 'info@diadisk.de';
@@ -481,7 +478,6 @@
 
   function setLanguage(l, persist) {
     lang = l;
-    if (persist) { try { localStorage.setItem('selectedLang', l); } catch (e) {} }
     document.documentElement.lang = l;
     if (window.syncCarouselPause) setTimeout(window.syncCarouselPause, 0);
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
@@ -633,7 +629,6 @@
     btn.addEventListener('click', function () {
       var on = !root.classList.contains('glass');
       apply(on);
-      try { localStorage.setItem('glass', on ? '1' : '0'); } catch (e) {}
     });
   })();
 
