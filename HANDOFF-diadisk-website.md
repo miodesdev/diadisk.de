@@ -52,3 +52,10 @@ Kopfzeile (Logo, Navigation, Sprachwahl) → Hero (Download-Button, Kurzinfo) �
 - Video: `<video id="demo-video">` mit `muted loop playsinline controls`; startet nur im sichtbaren Bereich und nicht bei „Bewegung reduzieren“ (siehe `app.js`, Abschnitt „Demo-Video“). Der Rahmen ist schwarz, weil die Aufnahme zu Beginn ein schmaleres Fenster zeigt. Die Figur hat bewusst nicht die Klasse `shot` (sonst blenden die Tabs sie aus).
 - Favicons: `favicon.svg` passt sich dem Browser-Schema an; ICO/PNG/Apple-Touch zeigen den Würfel weiß auf blauer Kachel und sind auf hellen und dunklen Tabs sichtbar.
 - Getestet: Chromium (Desktop und 390 px breit), keine Konsolenfehler.
+
+## 8. Änderungen 20.11.2026 (Rechts-/Barrierefreiheits-Durchgang)
+- Neue statische Seiten: `impressum.html`, `datenschutz.html`, `widerruf.html`, `nutzungsbedingungen.html`, `ki-hinweis.html` (Text aus `legal.js`, DE). Footer-Links sind echte Links; bei aktivem JS öffnet weiter das mehrsprachige Modal (Strg/Cmd-Klick öffnet die Seite).
+- Kontraste: `--brand` #0066cc, `--ok` #1d7a34, im Dunkelmodus schwarzer Text auf Primär-Buttons (alle ≥ 4,5:1).
+- Dialog: Fokus wandert hinein, Fokusfalle, Hintergrund `inert`, Fokus-Rückgabe, Beschriftung „Schließen“ übersetzt.
+- Skip-Link „Zum Inhalt springen“; Pause-Schalter fürs Karussell; bei „Bewegung reduzieren“ kein Auto-Wechsel.
+- `404.html` verlinkt Impressum und Datenschutz; `sitemap.xml` enthält die neuen Seiten.

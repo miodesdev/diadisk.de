@@ -23,7 +23,7 @@
   "c4": "Kreis-Verschachtelung: Ordner als ineinanderliegende Kreise, hier in den Farben „Ozean“.",
   "c5": "Voronoi-Treemap: organisch geformte Zellen, hier in den Farben „Pastell“.",
   "c6": "Verzeichnisbaum mit Größenbalken und Prozentwerten. Im Bild: die Auswahl unter 25 Sprachen.",
-  "ct_note": "Deine Angaben verwende ich nur zur Bearbeitung deiner Anfrage und lösche die E-Mails spätestens nach 30 Tagen (siehe <button type=\"button\" class=\"linkbtn\" data-modal=\"datenschutz\">Datenschutzerklärung</button>).",
+  "ct_note": "Deine Angaben verwende ich nur zur Bearbeitung deiner Anfrage und lösche die E-Mails spätestens nach 30 Tagen (siehe <a href=\"datenschutz.html\" data-modal=\"datenschutz\">Datenschutzerklärung</a>).",
   "ct_send": "E-Mail schreiben",
   "ct_sub": "Idee, Problem oder Feedback zu DiaDisk? Schreib mir an info@diadisk.de oder wähle ein Thema, dann öffnet sich dein Mailprogramm mit passendem Betreff.",
   "ct_t_bug": "Problem / Bug / Technischer Support",
@@ -54,8 +54,8 @@
   "f7t": "Logisch vs. belegt",
   "f8d": "Beim ersten Start wählt DiaDisk deine Systemsprache. Farben: Standard, Pastell, Ozean, Sonnenuntergang, Kontrastreich, Blautöne, Ampelgradient, Schwarz-Weiß.",
   "f8t": "25 Sprachen, 8 Farbvarianten",
-  "f9d": "Kein Tracking, keine Werbung, keine Drittanbieter-Software. Dateinamen, Pfade und Scan-Ergebnisse verlassen deinen Mac nie. Handbuch, Datenschutzerklärung und Impressum liegen offline im Hilfe-Menü.",
-  "f9t": "100 % lokal",
+  "f9d": "Kein Tracking, keine Werbung, keine Drittanbieter-Software. Dateinamen, Pfade und Scan-Ergebnisse werden von DiaDisk nicht übertragen. Handbuch, Datenschutzerklärung und Impressum liegen offline im Hilfe-Menü.",
+  "f9t": "Analyse lokal auf deinem Mac",
   "f_ai": "KI-Hinweis",
   "f_data": "Datenschutz",
   "f_imp": "Impressum",
@@ -64,10 +64,10 @@
   "f_rights": "Alle Rechte vorbehalten.",
   "ft_sub": "Alles, was du brauchst, um schnell zu verstehen, wohin dein Speicherplatz verschwindet.",
   "ft_title": "Funktionen",
-  "hero_b1": "<b>Volle Transparenz in 6 Ansichten:</b> Erkunde deinen Festplatten-Speicher aus verschiedenen Blickwinkeln und finde Speicherfresser in Sekundenschnelle.",
-  "hero_b2": "<b>Ultraschnell &amp; Nativ:</b> Für Apple Silicon entwickelt – maximale Performance bei minimalem Ressourcenverbrauch.",
-  "hero_b3": "<b>100 % Privat &amp; Sicher:</b> Kein Konto, keine Cloud, keine Telemetrie. Deine Daten bleiben garantiert da, wo sie hingehören: auf deinem Mac.",
-  "hero_b4": "<b>Made in Germany:</b> Sorgfältige Entwicklung, Datenschutz nach höchsten Standards und kompromisslose Qualität.",
+  "hero_b1": "<b>Klare Übersicht in 6 Ansichten:</b> Erkunde deinen Festplatten-Speicher aus verschiedenen Blickwinkeln und finde große Dateien und Ordner schneller.",
+  "hero_b2": "<b>Nativ für Apple Silicon:</b> Als native Mac-App entwickelt, mit sparsamem Ressourcenverbrauch.",
+  "hero_b3": "<b>Lokal &amp; ohne Konto:</b> Kein Konto, keine Cloud, keine Telemetrie. Dateinamen, Pfade und Scan-Ergebnisse werden von DiaDisk nicht übertragen und bleiben auf deinem Mac.",
+  "hero_b4": "<b>Made in Germany:</b> Sorgfältig entwickelt, mit Fokus auf Datenschutz und Qualität.",
   "hero_meta": "macOS 14+ · Apple Silicon (M1 oder neuer) · 7 Tage alles testen. Danach bleiben die Eiszapfen-Ansicht und die Standardfarben kostenlos, alles Weitere ab 2,99 € inkl. MwSt.",
   "hero_sub": "DiaDisk – der smarte Speicher-Analyzer für deinen Mac – verwandelt unübersichtliche Datenberge in sechs verschiedene, klare, interaktive Ansichten.",
   "hero_tag": "Speicheranalyse für den Mac",
@@ -111,6 +111,10 @@
   "views_sub": "Derselbe Scan, sechs Blickwinkel. Wähle die Ansicht, die für dich am besten lesbar ist.",
   "views_title": "Sechs Ansichten, ein Ergebnis",
   "a_prev": "Vorheriges Bild",
+  "a_close": "Schließen",
+  "a_skip": "Zum Inhalt springen",
+  "a_pause": "Automatischen Bildwechsel pausieren",
+  "a_play": "Automatischen Bildwechsel fortsetzen",
   "a_next": "Nächstes Bild",
   "f_glass": "Glas-Hintergrund"
  },
@@ -132,7 +136,7 @@
   "c4": "Circle packing: folders as nested circles, shown in the “Ocean” colors.",
   "c5": "Voronoi treemap: organically shaped cells, shown in the “Pastel” colors.",
   "c6": "Directory tree with size bars and percentages. Pictured: choosing from 25 languages.",
-  "ct_note": "I use your details only to handle your request and delete emails after 30 days at the latest (see the <button type=\"button\" class=\"linkbtn\" data-modal=\"datenschutz\">privacy policy</button>).",
+  "ct_note": "I use your details only to handle your request and delete emails after 30 days at the latest (see the <a href=\"datenschutz.html\" data-modal=\"datenschutz\">privacy policy</a>).",
   "ct_send": "Write an email",
   "ct_sub": "Idea, problem or feedback about DiaDisk? Write to info@diadisk.de, or pick a topic and your mail app opens with a matching subject line.",
   "ct_t_bug": "Problem / Bug / Technical support",
@@ -163,8 +167,8 @@
   "f7t": "Logical vs. on disk",
   "f8d": "DiaDisk picks your system language on first launch. Colors: Default, Pastel, Ocean, Sunset, High contrast, Shades of blue, Traffic light gradient, Black & white.",
   "f8t": "25 languages, 8 color options",
-  "f9d": "No tracking, no ads, no third-party code. File names, paths and scan results never leave your Mac. The manual, privacy policy and legal notice are built into the Help menu, offline.",
-  "f9t": "100% local",
+  "f9d": "No tracking, no ads, no third-party code. File names, paths and scan results are not transmitted by DiaDisk. The manual, privacy policy and legal notice are built into the Help menu, offline.",
+  "f9t": "Analysis runs locally on your Mac",
   "f_ai": "AI notice",
   "f_data": "Privacy Policy",
   "f_imp": "Imprint",
@@ -173,10 +177,10 @@
   "f_rights": "All rights reserved.",
   "ft_sub": "Everything you need to quickly understand where your storage went.",
   "ft_title": "Features",
-  "hero_b1": "<b>Full transparency in 6 views:</b> Explore your disk storage from different angles and find space hogs in seconds.",
-  "hero_b2": "<b>Ultra-fast &amp; native:</b> Built for Apple Silicon – maximum performance with minimal resource usage.",
-  "hero_b3": "<b>100% private &amp; secure:</b> No account, no cloud, no telemetry. Your data stays exactly where it belongs: on your Mac.",
-  "hero_b4": "<b>Made in Germany:</b> Careful development, data protection to the highest standards and uncompromising quality.",
+  "hero_b1": "<b>A clear overview in 6 views:</b> Explore your disk storage from different angles and find large files and folders faster.",
+  "hero_b2": "<b>Native for Apple Silicon:</b> Built as a native Mac app with modest resource usage.",
+  "hero_b3": "<b>Local &amp; no account:</b> No account, no cloud, no telemetry. File names, paths and scan results are not transmitted by DiaDisk and stay on your Mac.",
+  "hero_b4": "<b>Made in Germany:</b> Carefully developed, with a focus on privacy and quality.",
   "hero_meta": "macOS 14+ · Apple Silicon (M1 or newer) · Try everything for 7 days. After that, the icicle view and default colors stay free, everything else from €2.99 incl. VAT.",
   "hero_sub": "DiaDisk – the smart storage analyzer for your Mac – turns unwieldy mountains of data into six different, clear, interactive views.",
   "hero_tag": "Disk space analyzer for Mac",
@@ -220,6 +224,10 @@
   "views_sub": "The same scan from six angles. Pick the view that reads best for you.",
   "views_title": "Six views, one result",
   "a_prev": "Previous image",
+  "a_close": "Close",
+  "a_skip": "Skip to content",
+  "a_pause": "Pause automatic image rotation",
+  "a_play": "Resume automatic image rotation",
   "a_next": "Next image",
   "f_glass": "Glass background"
  },
@@ -241,7 +249,7 @@
   "c4": "Circle packing: le cartelle come cerchi annidati, qui nei colori «Oceano».",
   "c5": "Treemap di Voronoi: celle dalle forme organiche, qui nei colori «Pastello».",
   "c6": "Albero delle cartelle con barre delle dimensioni e percentuali. Nell’immagine: la scelta tra 25 lingue.",
-  "ct_note": "Uso i tuoi dati solo per gestire la richiesta ed elimino le email entro 30 giorni al massimo (vedi l’<button type=\"button\" class=\"linkbtn\" data-modal=\"datenschutz\">informativa sulla privacy</button>).",
+  "ct_note": "Uso i tuoi dati solo per gestire la richiesta ed elimino le email entro 30 giorni al massimo (vedi l’<a href=\"datenschutz.html\" data-modal=\"datenschutz\">informativa sulla privacy</a>).",
   "ct_send": "Scrivi un’email",
   "ct_sub": "Un’idea, un problema o un feedback su DiaDisk? Scrivi a info@diadisk.de oppure scegli un argomento: si aprirà il tuo programma di posta con l’oggetto adatto.",
   "ct_t_bug": "Problema / Bug / Supporto tecnico",
@@ -272,8 +280,8 @@
   "f7t": "Logica vs. occupata",
   "f8d": "Al primo avvio DiaDisk sceglie la lingua del sistema. Colori: Predefinito, Pastello, Oceano, Tramonto, Alto contrasto, Toni del blu, Gradiente semaforo, Bianco e nero.",
   "f8t": "25 lingue, 8 varianti di colore",
-  "f9d": "Nessun tracciamento, nessuna pubblicità, nessun codice di terze parti. Nomi dei file, percorsi e risultati non lasciano mai il tuo Mac. Manuale, informativa sulla privacy e note legali sono nel menu Aiuto, offline.",
-  "f9t": "100% locale",
+  "f9d": "Nessun tracciamento, nessuna pubblicità, nessun codice di terze parti. Nomi dei file, percorsi e risultati non vengono trasmessi da DiaDisk. Manuale, informativa sulla privacy e note legali sono nel menu Aiuto, offline.",
+  "f9t": "Analisi in locale sul tuo Mac",
   "f_ai": "Avviso IA",
   "f_data": "Privacy",
   "f_imp": "Note legali",
@@ -282,10 +290,10 @@
   "f_rights": "Tutti i diritti riservati.",
   "ft_sub": "Tutto ciò che serve per capire rapidamente dove è finito il tuo spazio.",
   "ft_title": "Funzioni",
-  "hero_b1": "<b>Piena trasparenza in 6 viste:</b> esplora lo spazio del disco da diverse prospettive e trova i divoratori di spazio in pochi secondi.",
-  "hero_b2": "<b>Ultraveloce e nativa:</b> sviluppata per Apple Silicon – massime prestazioni con un consumo minimo di risorse.",
-  "hero_b3": "<b>100% privata e sicura:</b> nessun account, nessun cloud, nessuna telemetria. I tuoi dati restano dove devono stare: sul tuo Mac.",
-  "hero_b4": "<b>Made in Germany:</b> sviluppo accurato, protezione dei dati secondo i più alti standard e qualità senza compromessi.",
+  "hero_b1": "<b>Panoramica chiara in 6 viste:</b> esplora lo spazio del disco da diverse prospettive e trova più velocemente file e cartelle voluminosi.",
+  "hero_b2": "<b>Nativa per Apple Silicon:</b> sviluppata come app Mac nativa, con un consumo contenuto di risorse.",
+  "hero_b3": "<b>Locale e senza account:</b> nessun account, nessun cloud, nessuna telemetria. Nomi dei file, percorsi e risultati non vengono trasmessi da DiaDisk e restano sul tuo Mac.",
+  "hero_b4": "<b>Made in Germany:</b> sviluppata con cura, con attenzione alla privacy e alla qualità.",
   "hero_meta": "macOS 14+ · Apple Silicon (M1 o successivi) · Prova tutto per 7 giorni. Poi la vista icicle e i colori predefiniti restano gratuiti, il resto da 2,99 € IVA inclusa.",
   "hero_sub": "DiaDisk – lo smart analizzatore di spazio per il tuo Mac – trasforma montagne di dati confuse in sei viste diverse, chiare e interattive.",
   "hero_tag": "Analisi dello spazio su disco per Mac",
@@ -329,6 +337,10 @@
   "views_sub": "La stessa scansione da sei punti di vista. Scegli la vista che ti risulta più leggibile.",
   "views_title": "Sei viste, un solo risultato",
   "a_prev": "Immagine precedente",
+  "a_close": "Chiudi",
+  "a_skip": "Vai al contenuto",
+  "a_pause": "Metti in pausa la rotazione automatica",
+  "a_play": "Riprendi la rotazione automatica",
   "a_next": "Immagine successiva",
   "f_glass": "Sfondo vetro"
  },
@@ -350,7 +362,7 @@
   "c4": "Вложенные круги: папки как круги внутри кругов, здесь в цветах «Океан».",
   "c5": "Вид Вороного: ячейки органичной формы, здесь в цветах «Пастель».",
   "c6": "Дерево папок с полосами размеров и процентами. На снимке: выбор из 25 языков.",
-  "ct_note": "Ваши данные я использую только для обработки запроса и удаляю письма не позднее чем через 30 дней (см. <button type=\"button\" class=\"linkbtn\" data-modal=\"datenschutz\">политику конфиденциальности</button>).",
+  "ct_note": "Ваши данные я использую только для обработки запроса и удаляю письма не позднее чем через 30 дней (см. <a href=\"datenschutz.html\" data-modal=\"datenschutz\">политику конфиденциальности</a>).",
   "ct_send": "Написать письмо",
   "ct_sub": "Идея, проблема или отзыв о DiaDisk? Пишите на info@diadisk.de или выберите тему, и откроется почтовая программа с подходящей темой письма.",
   "ct_t_bug": "Проблема / Баг / Техподдержка",
@@ -381,8 +393,8 @@
   "f7t": "Логический и занятый размер",
   "f8d": "При первом запуске DiaDisk выбирает язык системы. Цвета: стандартная, пастель, океан, закат, высокий контраст, оттенки синего, светофор, чёрно-белая.",
   "f8t": "25 языков, 8 вариантов цвета",
-  "f9d": "Без слежки, без рекламы, без стороннего кода. Имена файлов, пути и результаты сканирования никогда не покидают ваш Mac. Руководство, политика конфиденциальности и выходные данные доступны офлайн в меню «Справка».",
-  "f9t": "100 % локально",
+  "f9d": "Без слежки, без рекламы, без стороннего кода. Имена файлов, пути и результаты сканирования не передаются DiaDisk. Руководство, политика конфиденциальности и выходные данные доступны офлайн в меню «Справка».",
+  "f9t": "Анализ выполняется локально на вашем Mac",
   "f_ai": "Уведомление об ИИ",
   "f_data": "Конфиденциальность",
   "f_imp": "Выходные данные",
@@ -391,10 +403,10 @@
   "f_rights": "Все права защищены.",
   "ft_sub": "Всё, что нужно, чтобы быстро понять, куда уходит место на диске.",
   "ft_title": "Возможности",
-  "hero_b1": "<b>Полная прозрачность в 6 видах:</b> изучайте место на диске с разных сторон и находите «пожирателей места» за считаные секунды.",
-  "hero_b2": "<b>Сверхбыстро и нативно:</b> разработано для Apple Silicon – максимальная производительность при минимальном расходе ресурсов.",
-  "hero_b3": "<b>100 % приватно и безопасно:</b> без аккаунта, без облака, без телеметрии. Ваши данные остаются там, где им место: на вашем Mac.",
-  "hero_b4": "<b>Made in Germany:</b> тщательная разработка, защита данных по высочайшим стандартам и бескомпромиссное качество.",
+  "hero_b1": "<b>Наглядный обзор в 6 видах:</b> изучайте место на диске с разных сторон и быстрее находите крупные файлы и папки.",
+  "hero_b2": "<b>Нативно для Apple Silicon:</b> разработано как нативное приложение для Mac с умеренным расходом ресурсов.",
+  "hero_b3": "<b>Локально и без аккаунта:</b> без аккаунта, без облака, без телеметрии. Имена файлов, пути и результаты сканирования не передаются DiaDisk и остаются на вашем Mac.",
+  "hero_b4": "<b>Made in Germany:</b> тщательно разработано, с вниманием к конфиденциальности и качеству.",
   "hero_meta": "macOS 14+ · Apple Silicon (M1 и новее) · 7 дней все функции. Потом вид «сосульки» и стандартные цвета остаются бесплатными, остальное от 2,99 € с НДС.",
   "hero_sub": "DiaDisk – умный анализатор дискового пространства для вашего Mac – превращает запутанные горы данных в шесть разных, понятных, интерактивных видов.",
   "hero_tag": "Анализ дискового пространства для Mac",
@@ -438,6 +450,10 @@
   "views_sub": "Одно сканирование, шесть точек зрения. Выберите вид, который вам удобнее читать.",
   "views_title": "Шесть видов, один результат",
   "a_prev": "Предыдущее изображение",
+  "a_close": "Закрыть",
+  "a_skip": "Перейти к содержимому",
+  "a_pause": "Автосмену изображений остановить",
+  "a_play": "Автосмену изображений включить",
   "a_next": "Следующее изображение",
   "f_glass": "Стеклянный фон"
  }
@@ -467,6 +483,7 @@
     lang = l;
     if (persist) { try { localStorage.setItem('selectedLang', l); } catch (e) {} }
     document.documentElement.lang = l;
+    if (window.syncCarouselPause) setTimeout(window.syncCarouselPause, 0);
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var v = T[l][el.getAttribute('data-i18n')];
       if (v !== undefined) el.innerHTML = v;
@@ -542,14 +559,25 @@
     var section = document.getElementById('ansichten');
     var tabs = document.querySelectorAll('.tabs [role=tab]');
     if (!section || !tabs.length) return;
-    var timer = null, visible = false;
+    var timer = null, visible = false, paused = reduceMotion;
+    var pbtn = document.getElementById('carousel-pause');
+    function syncPause() {
+      if (!pbtn) return;
+      pbtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      pbtn.textContent = T[lang][paused ? 'a_play' : 'a_pause'];
+    }
+    if (pbtn) pbtn.addEventListener('click', function () {
+      paused = !paused; syncPause();
+      if (paused) clearTimeout(timer); else schedule(AUTO_MS);
+    });
+    window.syncCarouselPause = syncPause;
     function current() {
       var on = document.querySelector('.tabs .on');
       return on ? parseInt(on.getAttribute('data-tab'), 10) : 0;
     }
     function schedule(ms) {
       clearTimeout(timer);
-      if (!visible || document.hidden) return;
+      if (paused || !visible || document.hidden) return;
       timer = setTimeout(function () {
         showTab((current() + 1) % tabs.length, 1);
         schedule(AUTO_MS);
@@ -584,6 +612,7 @@
       if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) userShow(current() + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
     });
     section.addEventListener('pointercancel', function () { tracking = false; });
+    syncPause();
     // Nur laufen lassen, solange der Bereich sichtbar und der Tab aktiv ist
     document.addEventListener('visibilitychange', function () { schedule(AUTO_MS); });
     window.addEventListener('pageshow', function () { schedule(AUTO_MS); });
@@ -609,27 +638,60 @@
   })();
 
   // --- Modals (Rechtstexte) ---
+  var lastFocus = null;
+  function setBackgroundInert(on) {
+    ['header.top', 'main', 'footer'].forEach(function (sel) {
+      var el = document.querySelector(sel);
+      if (!el) return;
+      if (on) el.setAttribute('inert', ''); else el.removeAttribute('inert');
+    });
+  }
   function openModal(type) {
     var L = window.LEGAL || {};
     var texts = L[lang] || L.de || {};
     // Nutzungsbedingungen gibt es nur auf Deutsch und Englisch; andere Sprachen zeigen die englische Fassung
     var html = texts[type] || (type === 'eula' && L.en && L.en.eula) || (L.de || {})[type];
     if (!html) return;
-    $('modal-body').innerHTML = html;
     var ov = $('overlay');
+    var wasOpen = !ov.classList.contains('hidden');
+    if (!wasOpen) lastFocus = document.activeElement;
+    $('modal-body').innerHTML = html;
+    var h = $('modal-body').querySelector('h2');
+    if (h) { h.id = 'modal-title'; ov.setAttribute('aria-labelledby', 'modal-title'); }
     ov.setAttribute('data-modal', type);
     ov.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    setBackgroundInert(true);
+    $('modal-body').scrollTop = 0;
+    $('modal-close').focus();
   }
   function closeModal() {
-    $('overlay').classList.add('hidden');
+    var ov = $('overlay');
+    if (ov.classList.contains('hidden')) return;
+    ov.classList.add('hidden');
     document.body.style.overflow = '';
+    setBackgroundInert(false);
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch (e) {} }
+    lastFocus = null;
   }
+  // Fokusfalle im Dialog
+  document.addEventListener('keydown', function (e) {
+    var ov = $('overlay');
+    if (e.key !== 'Tab' || ov.classList.contains('hidden')) return;
+    var f = ov.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
   document.addEventListener('click', function (e) {
     var tb = e.target.closest('.tabs [role=tab]');
     if (tb) return;
     var m = e.target.closest('[data-modal]');
-    if (m && m.id !== 'overlay') { e.preventDefault(); openModal(m.getAttribute('data-modal')); return; }
+    if (m && m.id !== 'overlay') {
+      if (m.tagName === 'A' && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return; // neuer Tab: echte Seite
+      e.preventDefault(); openModal(m.getAttribute('data-modal')); return;
+    }
     var lb = e.target.closest('.lang button');
     if (lb) { setLanguage(lb.getAttribute('data-lang'), true); return; }
     if (e.target === $('overlay') || e.target.id === 'modal-close') closeModal();
