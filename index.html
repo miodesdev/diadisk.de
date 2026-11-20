@@ -162,14 +162,14 @@
       <h2 data-i18n="dl_title">Download</h2>
       <div class="card dl">
         <div><picture><source media="(prefers-color-scheme: dark)" srcset="logo-dark.svg"><img src="logo-light.svg" alt="DiaDisk" width="150" height="150"></picture></div>
-        <div>
+        <div class="dl-body">
           <h3>DiaDisk</h3>
           <p class="dl-meta" data-i18n="dl_meta">macOS 14+ · Apple Silicon (M1 oder neuer) · ZIP, 1,3 MB</p>
           <a class="btn btn-primary" href="downloads/DiaDisk.zip" download data-i18n="btn_dmg">ZIP herunterladen</a>
           <p class="small" data-i18n="dl_note">Bitte den Hinweis zur fehlenden Notarisierung beachten.</p>
-          <p class="small"><b>SHA-256</b></p>
+          <p class="small sha-label"><b>SHA-256</b></p>
           <div class="hash">
-            <code id="sha-value">4717e723f60859bca482bdd2450f86080691063848cd6c57974c3d2183cc30c4</code>
+            <code id="sha-value">25e3a54df5e0c0e6a15ccfdc32f1021e684cb0c229431e13b865176574259165</code>
             <button type="button" id="sha-copy" data-i18n="sha_copy">Kopieren</button>
           </div>
           <p class="small"><span data-i18n="sha_hint">Prüfen im Terminal:</span> <code class="mono">shasum -a 256 DiaDisk.zip</code> · <a href="downloads/DiaDisk.zip.sha256" download>.sha256</a></p>
