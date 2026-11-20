@@ -1,4 +1,5 @@
 :root {
+  color-scheme:light dark;
   --bg:#fff; --alt:#f5f5f7; --surface:#fff; --text:#1d1d1f; --muted:#6e6e73; --line:#d2d2d7;
   --brand:#0071e3; --brand-d:#0077ed; --brand-soft:#e8f2fd; --ok:#248a3d;
   --warn-bg:#fff8e8; --warn-line:#f0d9a0; --warn-text:#6b4500;
@@ -13,8 +14,8 @@
   }
 }
 * { box-sizing:border-box; }
-html { background-color:var(--bg); scroll-behavior:smooth; scroll-padding-top:calc(64px + env(safe-area-inset-top, 0px)); -webkit-text-size-adjust:100%; }
-body { margin:0; padding-left:env(safe-area-inset-left, 0px); padding-right:env(safe-area-inset-right, 0px); background:var(--bg); color:var(--text); line-height:1.47; font-size:17px; letter-spacing:-.01em;
+html { scroll-behavior:smooth; scroll-padding-top:64px; -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); color:var(--text); line-height:1.47; font-size:17px; letter-spacing:-.01em;
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Segoe UI",Roboto,Arial,sans-serif; -webkit-font-smoothing:antialiased; }
 a { color:var(--brand); text-decoration:none; } a:hover { text-decoration:underline; }
 img { max-width:100%; }
@@ -24,7 +25,7 @@ img { max-width:100%; }
 code, .mono { font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace; }
 
 /* Header */
-header.top { position:sticky; top:0; z-index:30; padding-top:env(safe-area-inset-top, 0px); background:var(--nav); -webkit-backdrop-filter:saturate(180%) blur(20px); backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid color-mix(in srgb, var(--line) 60%, transparent); }
+header.top { position:sticky; top:0; z-index:30; background:var(--nav); -webkit-backdrop-filter:saturate(180%) blur(20px); backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid color-mix(in srgb, var(--line) 60%, transparent); }
 .top .wrap { display:flex; align-items:center; justify-content:space-between; gap:8px 24px; min-height:52px; }
 .brand { display:flex; align-items:center; gap:8px; font-weight:600; font-size:1.05rem; color:var(--text); }
 .brand:hover { text-decoration:none; }
@@ -143,7 +144,7 @@ select { width:100%; min-height:44px; font:inherit; color:var(--text); backgroun
 select:focus, button:focus-visible, a:focus-visible { outline:2px solid var(--brand); outline-offset:2px; }
 
 /* Footer */
-footer { background:var(--alt); border-top:1px solid color-mix(in srgb, var(--line) 60%, transparent); padding:22px 0 calc(22px + env(safe-area-inset-bottom, 0px)); color:var(--muted); font-size:.8rem; }
+footer { background:var(--alt); border-top:1px solid color-mix(in srgb, var(--line) 60%, transparent); padding:22px 0; color:var(--muted); font-size:.8rem; }
 footer .wrap { display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:space-between; align-items:center; }
 footer .links { display:flex; flex-wrap:wrap; gap:4px 20px; }
 footer button { background:none; border:0; font:inherit; color:var(--muted); cursor:pointer; padding:8px 0; }
@@ -214,11 +215,8 @@ html.glass { --pn:rgba(255,255,255,.62); --ln:rgba(255,255,255,.7); --bl:blur(28
     --gsh:0 8px 32px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.1);
     --page:radial-gradient(60% 50% at 12% 0,#1b2a66,transparent), radial-gradient(50% 40% at 92% 8%,#43205f,transparent), radial-gradient(60% 50% at 50% 100%,#0c3b3a,transparent), #000; }
 }
-/* Grundfarbe auf <html>: sonst zeigt Mobile-Safari oben/unten (Statusleiste, Safe-Area, Überscrollen) weißen Rand */
-html.glass { background-color:#f5f5f7; }
-@media (prefers-color-scheme: dark) { html.glass { background-color:#000; } }
-html.glass body { background:transparent; }
-html.glass body::before { content:""; position:fixed; top:-120px; bottom:-120px; left:0; right:0; z-index:-1; background:var(--page); }
+/* Verlauf direkt auf <body> (wie domainatcall.com): so wird er zur Fläche des ganzen Fensters (Statusleiste, Überscrollen) und Mobile-Safari zeigt keinen weißen Rand */
+html.glass body { background:var(--page); background-attachment:fixed; }
 html.glass #funktionen, html.glass #kontakt { background:transparent; }
 html.glass .card, html.glass #funktionen .card, html.glass .hero-points li, html.glass .dl, html.glass footer {
   background:var(--pn); -webkit-backdrop-filter:var(--bl); backdrop-filter:var(--bl); box-shadow:var(--gsh); }
