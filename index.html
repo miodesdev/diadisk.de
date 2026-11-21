@@ -26,7 +26,7 @@
 <meta name="twitter:image" content="https://diadisk.de/og-image.jpg">
 <link rel="stylesheet" href="style.css">
 <script src="glass-init.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"diaDISK","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 14 or later (Apple Silicon)","offers":{"@type":"Offer","price":"2.99","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"2.99","priceCurrency":"EUR","valueAddedTaxIncluded":true}},"url":"https://diadisk.de/","image":"https://diadisk.de/og-image.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"diaDISK","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 14 or later (Apple Silicon)","description":"diaDISK is a macOS app that visualizes disk usage in six interactive views. The analysis runs locally on your Mac. Free trial and basic version; full license pay-what-you-want from EUR 2.99 incl. VAT, sold by Payhip.","softwareVersion":"1.0.6","downloadUrl":"https://diadisk.de/downloads/DiaDisk.zip","inLanguage":["de","en","it","ru"],"offers":{"@type":"Offer","price":"2.99","priceCurrency":"EUR","description":"Minimum price (pay what you want), VAT included","priceSpecification":{"@type":"PriceSpecification","minPrice":"2.99","priceCurrency":"EUR","valueAddedTaxIncluded":true},"url":"https://payhip.com/b/aEo54"},"url":"https://diadisk.de/","image":"https://diadisk.de/og-image.jpg"}</script>
 </head>
 <body>
 <a class="skip" href="#top" data-i18n="a_skip">Zum Inhalt springen</a>
@@ -55,6 +55,7 @@
 </header>
 
 <main id="top">
+<noscript><div class="wrap"><p lang="en">diaDISK is a macOS app that visualizes disk usage in six interactive views. Analysis runs locally on your Mac; free trial and basic version, full license from €2.99 incl. VAT. Enable JavaScript to switch the page language.</p><p lang="it">diaDISK è un’app per macOS che visualizza l’occupazione del disco in sei viste interattive. L’analisi avviene in locale sul tuo Mac; versione di prova e base gratuita, licenza completa da 2,99 € IVA inclusa.</p><p lang="ru">diaDISK — приложение для macOS, которое показывает занятое место на дисках в шести интерактивных видах. Анализ выполняется локально на твоём Mac; бесплатная пробная и базовая версия, полная лицензия от 2,99 € с НДС.</p></div></noscript>
   <section class="hero">
     <div class="wrap">
       <span class="tag" data-i18n="hero_tag">Speicheranalyse für den Mac</span>
@@ -147,7 +148,7 @@
     <div class="wrap">
       <div class="notice compact">
         <div class="nt-head"><span class="badge" data-i18n="nt_badge">Wichtiger Hinweis</span><strong data-i18n="nt_title"><span class="dd">dia<b>DISK</b></span> ist noch nicht notarisiert</strong></div>
-        <p data-i18n="nt_lead">macOS blockiert den ersten Start, weil Apples automatische Malware-Prüfung (Notarisierung) noch aussteht. Das heißt nicht, dass die App schädlich ist: Prüfe die SHA-256-Prüfsumme der ZIP-Datei und lade nur von diadisk.de. Nach der Notarisierung entfällt die Warnung.</p>
+        <p data-i18n="nt_lead">macOS blockiert den ersten Start, weil die App nicht von Apple notarisiert ist (Apples automatische Malware-Prüfung). Sie ist mit einem selbst erzeugten Zertifikat signiert, nicht mit einer Apple-Developer-ID; die Warnung bleibt daher bestehen. Das heißt nicht, dass die App schädlich ist: Prüfe die SHA-256-Prüfsumme der ZIP-Datei und lade nur von diadisk.de.</p>
         <p class="nt-steps-t" data-i18n="nt_steps_t">So öffnest du die App trotzdem:</p>
         <ol>
           <li data-i18n="nt_s1">Prüfsumme der ZIP-Datei prüfen (siehe Download).</li>
@@ -171,7 +172,7 @@
           <p class="small" data-i18n="dl_note">Bitte den Hinweis zur fehlenden Notarisierung beachten.</p>
           <p class="small sha-label"><b>SHA-256</b></p>
           <div class="hash">
-            <code id="sha-value">ea59fbc53c4d2525c4fd77402540805644dd07e05a7f2005b6742bf39886d4da</code>
+            <code id="sha-value">8ff7567d357b999416f450edc445328261a7904faa4afc41c1da0cec2b911094</code>
             <button type="button" id="sha-copy" data-i18n="sha_copy">Kopieren</button>
           </div>
           <p class="small"><span data-i18n="sha_hint">Prüfen im Terminal:</span> <code class="mono">shasum -a 256 DiaDisk.zip</code> · <a href="downloads/DiaDisk.zip.sha256" download>.sha256</a></p>

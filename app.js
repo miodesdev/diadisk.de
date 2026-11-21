@@ -80,7 +80,7 @@
   "nav_views": "Ansichten",
   "nt_badge": "Wichtiger Hinweis",
   "nt_hint": "Jede neu heruntergeladene Version muss einzeln freigegeben werden. Unter macOS 14 geht auch Rechtsklick → „Öffnen“.",
-  "nt_lead": "macOS blockiert den ersten Start, weil Apples automatische Malware-Prüfung (Notarisierung) noch aussteht. Das heißt nicht, dass die App schädlich ist: Prüfe die SHA-256-Prüfsumme der ZIP-Datei und lade nur von diadisk.de. Nach der Notarisierung entfällt die Warnung.",
+  "nt_lead": "macOS blockiert den ersten Start, weil die App nicht von Apple notarisiert ist (Apples automatische Malware-Prüfung). Sie ist mit einem selbst erzeugten Zertifikat signiert, nicht mit einer Apple-Developer-ID; die Warnung bleibt daher bestehen. Das heißt nicht, dass die App schädlich ist: Prüfe die SHA-256-Prüfsumme der ZIP-Datei und lade nur von diadisk.de.",
   "nt_s1": "Prüfsumme der ZIP-Datei prüfen (siehe Download).",
   "nt_s2": "ZIP entpacken, <span class=\"dd\">dia<b>DISK</b></span> in „Programme“ ziehen, einmal starten und die Warnung mit „Fertig“ schließen.",
   "nt_s3": "Systemeinstellungen → Datenschutz & Sicherheit → bei <span class=\"dd\">dia<b>DISK</b></span> „Dennoch öffnen“, mit Passwort oder Touch ID bestätigen.",
@@ -192,7 +192,7 @@
   "nav_views": "Views",
   "nt_badge": "Important notice",
   "nt_hint": "Every newly downloaded version must be allowed separately. On macOS 14, right-click → “Open” also works.",
-  "nt_lead": "macOS blocks the first launch because Apple’s automated malware check (notarization) is still pending. That does not mean the app is harmful: verify the ZIP file’s SHA-256 checksum and only download from diadisk.de. The warning disappears once the app is notarized.",
+  "nt_lead": "macOS blocks the first launch because the app is not notarized by Apple (Apple’s automated malware check). It is signed with a self-generated certificate, not with an Apple Developer ID, so the warning remains. That does not mean the app is harmful: verify the ZIP file’s SHA-256 checksum and only download from diadisk.de.",
   "nt_s1": "Verify the ZIP file’s checksum (see Download).",
   "nt_s2": "Unzip the file, drag <span class=\"dd\">dia<b>DISK</b></span> to “Applications”, launch it once and dismiss the warning with “Done”.",
   "nt_s3": "System Settings → Privacy & Security → click “Open Anyway” next to <span class=\"dd\">dia<b>DISK</b></span>, confirm with your password or Touch ID.",
@@ -304,7 +304,7 @@
   "nav_views": "Viste",
   "nt_badge": "Avviso importante",
   "nt_hint": "Ogni nuova versione scaricata va autorizzata separatamente. Su macOS 14 funziona anche clic destro → «Apri».",
-  "nt_lead": "macOS blocca il primo avvio perché il controllo antimalware automatico di Apple (notarizzazione) non è ancora stato eseguito. Ciò non significa che l’app sia dannosa: verifica la checksum SHA-256 del file ZIP e scarica solo da diadisk.de. Dopo la notarizzazione l’avviso scompare.",
+  "nt_lead": "macOS blocca il primo avvio perché l’app non è notarizzata da Apple (il controllo antimalware automatico di Apple). È firmata con un certificato generato in proprio, non con un Apple Developer ID; l’avviso quindi rimane. Ciò non significa che l’app sia dannosa: verifica la checksum SHA-256 del file ZIP e scarica solo da diadisk.de.",
   "nt_s1": "Verifica la checksum del file ZIP (vedi Download).",
   "nt_s2": "Decomprimi il file, trascina <span class=\"dd\">dia<b>DISK</b></span> in «Applicazioni», avviala una volta e chiudi l’avviso con «Fine».",
   "nt_s3": "Impostazioni di Sistema → Privacy e sicurezza → «Apri comunque» accanto a <span class=\"dd\">dia<b>DISK</b></span>, conferma con password o Touch ID.",
@@ -416,7 +416,7 @@
   "nav_views": "Виды",
   "nt_badge": "Важное уведомление",
   "nt_hint": "Каждую заново скачанную версию нужно разрешать отдельно. В macOS 14 также работает правый клик → «Открыть».",
-  "nt_lead": "macOS блокирует первый запуск, потому что автоматическая проверка Apple на вредоносное ПО (нотаризация) ещё не пройдена. Это не значит, что приложение вредоносно: сверь контрольную сумму SHA-256 ZIP-файла и скачивай только с diadisk.de. После нотаризации предупреждение исчезнет.",
+  "nt_lead": "macOS блокирует первый запуск, потому что приложение не нотаризовано Apple (автоматическая проверка Apple на вредоносное ПО). Оно подписано самостоятельно созданным сертификатом, а не Apple Developer ID, поэтому предупреждение остаётся. Это не значит, что приложение вредоносно: сверь контрольную сумму SHA-256 ZIP-файла и скачивай только с diadisk.de.",
   "nt_s1": "Сверь контрольную сумму ZIP-файла (см. «Скачать»).",
   "nt_s2": "Распакуй архив, перетащи <span class=\"dd\">dia<b>DISK</b></span> в «Программы», запусти один раз и закрой предупреждение кнопкой «Готово».",
   "nt_s3": "Системные настройки → Конфиденциальность и безопасность → «Всё равно открыть» рядом с <span class=\"dd\">dia<b>DISK</b></span>, подтверди паролем или Touch ID.",
@@ -738,6 +738,5 @@
     a.addEventListener('click', function () { setMenu(false); });
   });
 
-  showTab(1);
   setLanguage(lang, false);
 })();
