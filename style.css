@@ -264,3 +264,9 @@ footer .glass-toggle:hover { text-decoration:none; color:var(--text); }
 .legal-page h2 { font-size:1.8rem; margin-top:8px; } .legal-page h3 { margin-top:22px; }
 .legal-page .back { display:inline-block; margin-bottom:18px; }
 .legal-page .note { font-size:.85rem; color:var(--muted); font-style:italic; }
+
+/* Markenschreibweise: dia normal, DISK fett */
+.dd { font-weight:400; }
+.dd b { display:inline; margin:0; font-size:inherit; font-weight:700; color:inherit; }
+.btn { white-space:pre-wrap; } /* Leerzeichen neben der Marke im Flex-Button erhalten */
+.legal-page h4, .modal h4 { font-size:1rem; margin:16px 0 4px; }
