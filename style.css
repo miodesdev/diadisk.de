@@ -261,7 +261,8 @@ footer .glass-toggle:hover { text-decoration:none; color:var(--text); }
 /* Statische Rechtstext-Seiten */
 .legal-page { padding:40px 0 64px; }
 .legal-page .doc { max-width:760px; margin:0 auto; }
-.legal-page h2 { font-size:1.8rem; margin-top:8px; } .legal-page h3 { margin-top:22px; }
+.legal-page h1 { font-size:1.8rem; line-height:1.1; letter-spacing:-.03em; margin:8px 0 10px; }
+.legal-page h2 { font-size:1.1rem; font-weight:600; line-height:inherit; letter-spacing:-.01em; margin:22px 0 6px; }
 .legal-page .back { display:inline-block; margin-bottom:18px; }
 .legal-page .note { font-size:.85rem; color:var(--muted); font-style:italic; }
 
@@ -269,4 +270,8 @@ footer .glass-toggle:hover { text-decoration:none; color:var(--text); }
 .dd { font-weight:400; }
 .dd b { display:inline; margin:0; font-size:inherit; font-weight:700; color:inherit; }
 .btn { white-space:pre-wrap; } /* Leerzeichen neben der Marke im Flex-Button erhalten */
-.legal-page h4, .modal h4 { font-size:1rem; margin:16px 0 4px; }
+.legal-page h3, .modal h4 { font-size:1rem; font-weight:700; letter-spacing:normal; margin:16px 0 4px; }
+/* Automatische Nummerierung der Abschnitte (Datenschutz, EULA) */
+.numbered { counter-reset:sec; }
+.modal .numbered h3, .legal-page .numbered h2 { counter-increment:sec; }
+.modal .numbered h3::before, .legal-page .numbered h2::before { content:counter(sec) ". "; }
