@@ -289,4 +289,9 @@ footer .glass-toggle:hover { text-decoration:none; color:var(--text); }
 .bf .btn-primary, .bf .btn-primary:hover { background:#ffd60a; color:#000; }
 .bf .btn-primary:hover { background:#ffe14d; }
 .bf.hidden { display:none; }
+@media (min-width:1040px) {
+  .bf-card { flex-wrap:nowrap; gap:24px; }
+  .bf-badge, .bf-code, .bf-buy { flex:none; white-space:nowrap; }
+  .bf-text { flex:1 1 0; }
+}
 @media (max-width:640px) { .bf-card { padding:16px; } .bf-code { width:100%; justify-content:space-between; } .bf-buy { width:100%; } }
