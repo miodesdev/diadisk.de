@@ -6,6 +6,12 @@
 
   var T = {
  "de": {
+ "bf_badge": "Black Friday",
+ "bf_title": "Black Friday: Vollversion kostenlos",
+ "bf_text": "Die ersten 100 Einlösungen erhalten die Vollversion gratis, gültig bis 30.11.2026. Gib den Code beim Kauf auf Payhip ein.",
+ "bf_copy": "Code kopieren",
+ "bf_copied": "Kopiert ✓",
+ "bf_cta": "Jetzt gratis sichern",
   "alt0": "diaDISK Startseite mit Laufwerken und Einstellungen",
   "alt1": "diaDISK mit Strahl-Ansicht der Library in den Farben „Sonnenuntergang“, Seitenleiste mit Farben",
   "alt2": "diaDISK mit Kachel-Ansicht in den Farben „Kontrastreich“",
@@ -118,6 +124,12 @@
   "f_glass": "Glas-Hintergrund"
  },
  "en": {
+ "bf_badge": "Black Friday",
+ "bf_title": "Black Friday: full version for free",
+ "bf_text": "The first 100 redemptions get the full version at no cost, valid until Nov 30, 2026. Enter the code at checkout on Payhip.",
+ "bf_copy": "Copy code",
+ "bf_copied": "Copied ✓",
+ "bf_cta": "Get it for free",
   "alt0": "diaDISK home screen with drives and the settings panel",
   "alt1": "diaDISK showing the sunburst view of Library in the Sunset colors, with the colors sidebar",
   "alt2": "diaDISK showing a treemap in the High contrast colors",
@@ -230,6 +242,12 @@
   "f_glass": "Glass background"
  },
  "it": {
+ "bf_badge": "Black Friday",
+ "bf_title": "Black Friday: versione completa gratis",
+ "bf_text": "Le prime 100 riscossioni ottengono la versione completa gratis, valida fino al 30.11.2026. Inserisci il codice al checkout su Payhip.",
+ "bf_copy": "Copia codice",
+ "bf_copied": "Copiato ✓",
+ "bf_cta": "Ottienila gratis",
   "alt0": "Schermata iniziale di diaDISK con i volumi e il pannello delle impostazioni",
   "alt1": "diaDISK con la vista a raggiera della cartella Library nei colori Tramonto e barra laterale dei colori",
   "alt2": "diaDISK con treemap a riquadri nei colori Alto contrasto",
@@ -342,6 +360,12 @@
   "f_glass": "Sfondo vetro"
  },
  "ru": {
+ "bf_badge": "Чёрная пятница",
+ "bf_title": "Чёрная пятница: полная версия бесплатно",
+ "bf_text": "Первые 100 активаций получают полную версию бесплатно, до 30.11.2026. Введи код при оформлении заказа на Payhip.",
+ "bf_copy": "Копировать код",
+ "bf_copied": "Скопировано ✓",
+ "bf_cta": "Получить бесплатно",
   "alt0": "Стартовый экран diaDISK со списком дисков и панелью настроек",
   "alt1": "diaDISK с лучевым видом папки Library в цветах «Закат» и боковой панелью цветов",
   "alt2": "diaDISK с плиточным видом в цветах «Высокий контраст»",
@@ -720,6 +744,31 @@
       a.classList.remove('hidden');
     });
   }
+
+
+  // --- Black-Friday-Aktion (Payhip-Coupon) ---
+  // Zeitraum laut Payhip-Coupon (Zeitzone CET): 22.11.2026 12:00 bis 01.12.2026 00:00. Danach blendet sich das Banner selbst aus.
+  (function () {
+    var BF_CODE = 'SUXFQAQOQJ';
+    var START = Date.UTC(2026, 10, 22, 11, 0, 0);   // 12:00 CET
+    var END = Date.UTC(2026, 10, 30, 23, 0, 0);     // 01.12.2026 00:00 CET
+    var now = Date.now();
+    var forced = /[?&]bf=1(&|$)/.test(location.search); // Vorschau: ?bf=1
+    var bf = $('bf');
+    if (!bf || !((now >= START && now < END) || forced)) return;
+    $('bf-code').textContent = BF_CODE;
+    bf.classList.remove('hidden');
+    var buy = $('bf-buy');
+    if (PAYHIP_URL) {
+      buy.setAttribute('href', PAYHIP_URL); // Code wird bei Payhip an der Kasse eingegeben
+      buy.classList.remove('hidden');
+    }
+    $('bf-copy').addEventListener('click', function () {
+      var btn = this;
+      function done() { btn.textContent = T[lang].bf_copied; setTimeout(function () { btn.textContent = T[lang].bf_copy; }, 2000); }
+      if (navigator.clipboard) navigator.clipboard.writeText(BF_CODE).then(done).catch(function () {});
+    });
+  })();
 
   // --- Kontakt per mailto ---
   $('ct-topic').addEventListener('change', updateMail);
